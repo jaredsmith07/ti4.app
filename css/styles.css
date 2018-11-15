@@ -388,9 +388,9 @@ button::-moz-focus-inner {
   font-size: calc((0.85em + 0.25vw)*0.7); }
 
 .primary-button {
-  background: #47B8C7; }
+  background: #e76d23; }
   .primary-button:hover {
-    background: #2e8c98; }
+    background: #b95214; }
 
 .neutral-dark-button {
   background: #3b3b3b; }
@@ -406,12 +406,26 @@ button::-moz-focus-inner {
 .affirm-button {
   background: #4AC747; }
   .affirm-button:hover {
-    background: #31982e; }
+    background: #33a031; }
 
 .negate-button {
   background: #C74757; }
   .negate-button:hover {
-    background: #982e3c; }
+    background: #a0313f; }
+
+@font-face {
+  font-family: 'Slider';
+  src: url("../fonts/Slider.woff2") format("woff2"), url("../fonts/Slider.woff") format("woff"), url("../fonts/Slider.ttf") format("truetype"), url("../fonts/Slider.svg#Slider") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+h1, h2, h3, h4, h5, h6, p, label {
+  margin: 0 0 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Slider'; }
 
 h1 {
   font-size: calc((2em + 1vw)); }
@@ -419,57 +433,88 @@ h1 {
 h2 {
   font-size: calc((1em + 0.25vw)); }
 
-p {
+h3 {
   font-size: calc((0.85em + 0.25vw)); }
+
+p, label {
+  font-size: calc((0.85em + 0.25vw)); }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: calc((0.5em + 0.25vw) * -0.5);
+  margin-right: calc((0.5em + 0.25vw) * -0.5); }
+  .flex-row > * {
+    width: 100%;
+    margin: calc((0.5em + 0.25vw) / 2); }
 
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #222; }
+  color: #fff;
+  box-sizing: border-box; }
 
 body {
-  background: #f3f3f3;
+  background-color: #0b1d4b;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   padding: 3em;
-  max-width: 600px;
   margin: 0 auto; }
 
-hr {
-  margin: 3em 0;
-  border: none;
-  border-top: solid 1px #c5c5c5; }
+.strategies .module__body {
+  flex-wrap: wrap; }
 
-#list {
-  padding: 2em 0; }
-  #list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0; }
+.strategy {
+  width: calc(25% - (0.5em + 0.25vw));
+  background: rgba(0, 0, 0, 0.25);
+  border-top: solid 2px #fff;
+  box-shadow: inset 0 0 72px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: calc((0.5em + 0.5vw)); }
+  .strategy h3 {
+    text-transform: uppercase;
+    margin-bottom: calc((0.5em + 0.5vw)); }
+  .strategy.strategy__leadership {
+    border-color: #9b040c; }
+  .strategy.strategy__diplomacy {
+    border-color: #e76d23; }
+  .strategy.strategy__politics {
+    border-color: #f0b432; }
+  .strategy.strategy__construction {
+    border-color: #1ba85d; }
+  .strategy.strategy__trade {
+    border-color: #24b09f; }
+  .strategy.strategy__warfare {
+    border-color: #2894d2; }
+  .strategy.strategy__technology {
+    border-color: #133180; }
+  .strategy.strategy__imperial {
+    border-color: #541f89; }
 
-.list-item {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
+.strategy__player-select .field-row:last-child label {
+  margin-bottom: 0; }
+
+.strategy__player-select input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden; }
+  .strategy__player-select input[type="checkbox"]:checked ~ label {
+    background: #24b09f;
+    color: #fff;
+    border-color: transparent; }
+
+.strategy__player-select label {
+  display: block;
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 700;
+  font-size: calc((0.65em + 0.25vw));
+  border: solid 1px rgba(255, 255, 255, 0.25);
+  padding: calc(1.5rem / 3);
   border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  padding: 0.25em;
-  margin: 0.5em 0; }
-
-.list-item__field {
-  width: 100%;
-  padding: 0.5em 0.75em;
-  border-radius: 5px;
-  border: solid 1px #fff; }
-  .list-item__field:hover, .list-item__field:focus {
-    background-color: #eff9fa;
-    box-shadow: inset 0 1px 2px 0 #b4e2e8; }
-
-.list-item__remove {
-  padding: 0.25em; }
-  .list-item__remove svg {
-    line-height: 0;
-    fill: gainsboro; }
-  .list-item__remove:hover {
-    cursor: pointer; }
-    .list-item__remove:hover svg {
-      fill: #C74757; }
+  margin-bottom: calc((0.5em + 0.5vw));
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  cursor: pointer; }
+  .strategy__player-select label:hover {
+    color: rgba(255, 255, 255, 0.5); }

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Slider';
+    src: url('Slider.woff2') format('woff2'),
+        url('Slider.woff') format('woff'),
+        url('Slider.ttf') format('truetype'),
+        url('Slider.svg#Slider') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

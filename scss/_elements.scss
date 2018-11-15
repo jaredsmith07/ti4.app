@@ -31,8 +31,8 @@
 
 // Button Colors
 @mixin primary-button {
-    background: $primary-color;
-    &:hover { background: $primary-color-dd; }
+    background: $color-orange;
+    &:hover { background: $color-orange-d; }
 }
 @mixin neutral-dark-button {
     background: $neutral-color-ddd;
@@ -45,11 +45,11 @@
 }
 @mixin affirm-button {
     background: $affirm-color;
-    &:hover { background: $affirm-color-dd; }
+    &:hover { background: $affirm-color-d; }
 }
 @mixin negate-button {
     background: $negate-color;
-    &:hover { background: $negate-color-dd; }
+    &:hover { background: $negate-color-d; }
 }
 .primary-button { @include primary-button; }
 .neutral-dark-button { @include neutral-dark-button; }

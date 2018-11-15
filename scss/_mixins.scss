@@ -10,3 +10,8 @@
 @mixin transition($transition-property, $transition-time: 0.25s) {
     transition: $transition-property ease-in-out $transition-time;
 }
+
+@mixin spaced-letters {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+}

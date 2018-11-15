@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "node-sass": "^4.10.0"
+  },
+  "name": "ti4.io",
+  "version": "1.0.0",
+  "description": "A companion app for TI4",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredsmith07/ti4.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaredsmith07/ti4.io/issues"
+  },
+  "homepage": "https://github.com/jaredsmith07/ti4.io#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  }
+}

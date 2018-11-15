@@ -1,0 +1,77 @@
+.strategies {
+    .module__body {
+        flex-wrap: wrap;
+    }
+}
+
+.strategy {
+    width: calc(25% - #{$grid-margin-value});
+    background: rgba(#000, 0.25);
+    border-top: solid 2px #fff;
+    box-shadow: inset 0 0 72px rgba(#000, 0.5);
+    text-align: center;
+    padding: $card-padding;
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: $card-padding;
+    }
+    &.strategy__leadership {
+        border-color: $color-red;
+    }
+    &.strategy__diplomacy {
+        border-color: $color-orange;
+    }
+    &.strategy__politics {
+        border-color: $color-yellow;
+    }
+    &.strategy__construction {
+        border-color: $color-green;
+    }
+    &.strategy__trade {
+        border-color: $color-teal;
+    }
+    &.strategy__warfare {
+        border-color: $color-blue;
+    }
+    &.strategy__technology {
+        border-color: $color-navy;
+    }
+    &.strategy__imperial {
+        border-color: $color-purple;
+    }
+}
+
+.strategy__player-select {
+    .field-row {
+        &:last-child label {
+            margin-bottom: 0;
+        }
+    }
+    input[type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+        visibility: hidden;
+        &:checked {
+            & ~ label {
+                background: $color-teal;
+                color: #fff;
+                border-color: transparent;
+            }
+        }
+    }
+    label {
+        display: block;
+        color: rgba(#fff, 0.25);
+        font-weight: 700;
+        font-size: $subp-font-size;
+        border: solid 1px rgba(#fff, 0.25);
+        padding: calc(#{$paragraph-margin} / 3);
+        border-radius: $ui-radius;
+        margin-bottom: $card-padding;
+        @include spaced-letters;
+        cursor: pointer;
+        &:hover {
+            color: rgba(#fff, 0.5);
+        }
+    }
+}
