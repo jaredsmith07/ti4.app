@@ -1,0 +1,45 @@
+.round {
+    .module__body {
+        flex-wrap: nowrap;
+    }
+    .module__foot {
+        margin-top: $paragraph-margin;
+    }
+}
+
+.player {
+    width: calc((100% / 6) - #{$grid-margin-value});
+    background: rgba(#000, 0.7);
+    border-top: solid 4px #fff;
+    box-shadow: inset 0 0 72px rgba(#000, 0.85);
+    text-align: center;
+    padding: $card-padding;
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: $card-padding;
+    }
+    &.passed {
+        opacity: 0.5;
+        input:not(:checked) ~ label {
+            visibility: hidden;
+        }
+    }
+    &.player--red {
+        border-color: $color-red;
+    }
+    &.player--yellow {
+        border-color: $color-yellow;
+    }
+    &.player--green {
+        border-color: $color-green;
+    }
+    &.player--blue {
+        border-color: $color-blue;
+    }
+    &.player--black {
+        border-color: $color-black;
+    }
+    &.player--purple {
+        border-color: $color-purple;
+    }
+}

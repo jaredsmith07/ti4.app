@@ -6,7 +6,7 @@
 // Variables
 // --------------------------------------------------------------------------------
 let strategies = [];
-
+let pickedStrategies = 0;
 
 
 // Functions
@@ -54,7 +54,7 @@ const createStrategyMarkup = () => { // create strategy section markup
             const player = players[j];
             let playerSelectHTML = `
                 <div class="field-row">
-                    <input type="checkbox" id="strat-${strategy.number}-player-${player.id}" name="player-${player.id}">
+                    <input type="checkbox" id="strat-${strategy.number}-player-${player.id}" name="player-${player.id}" data-player="${player.id}" data-strat="${strategy.number}">
                     <label for="strat-${strategy.number}-player-${player.id}">${player.name}</label>
                 </div>
             `;
@@ -64,18 +64,109 @@ const createStrategyMarkup = () => { // create strategy section markup
 };
 createStrategyMarkup();
 
+// count picked strategies
+const countPickedStrategies = () => {
+    pickedStrategies = 0;
+    for (let i = 0; i < strategies.length; i++) {
+        const strategy = strategies[i];
+        let strategyDiv = $('.strategy__' + strategy.title);
+        if ( $(strategyDiv).hasClass('picked') ) {
+            pickedStrategies++;
+        }
+    }
+    return pickedStrategies;
+}
+
 // mark a strategy as selected
+// check how many strategies have been picked
+$('#start-round').prop("disabled", true);
 for (let i = 0; i < strategies.length; i++) {
     const strategy = strategies[i];
     let strategyDiv = $('.strategy__' + strategy.title);
-    $('strategyDiv').on('change', function(event){
-        log('change detected');
+
+    $(strategyDiv).on('change', function(event){
+
+        $(strategyDiv).toggleClass('picked');
+
+        countPickedStrategies();
+
+        if ( pickedStrategies == players.length ) {
+            $('#start-round').prop("disabled", false);
+        } else {
+            $('#start-round').prop("disabled", true);
+        }
+
     });
-    // for (let j = 0; j < players.length; j++) {
-    //     const player = players[j];
-        
-    //     // $("#strat-" + strategy.number + "-player-" + player.id).on('change', function() {
-    //     //     log("strategy picked");
-    //     // });
-    // }
 }
+
+// create rounds markup
+$('#end-round').prop("disabled", true);
+let turnNumber = 1;
+const createRoundMarkup = () => { 
+
+    for (let i = 0; i < strategies.length; i++) {
+
+        let strategy = strategies[i];
+
+        // create markup for each strategy if it was picked
+        if ( strategy.picked !== false ) {
+            let playerId = strategy.picked;
+
+            for (let j = 0; j < players.length; j++) {
+                let player = players[j];
+                if ( player.id == playerId ) {
+                    let roundHTML = `
+                    <div class="player player--${player.color}">
+                        <p class="player__turn">${turnNumber}</p>
+                        <h3>${player.name}</h3>
+                        <p>${strategy.title}</p>
+                    </div>
+                    `;
+                    $('.round .module__body').append(roundHTML);
+                } 
+            } 
+            turnNumber++;       
+        }
+    }
+};
+
+// on start round
+//      - store picked strategies
+//      - store player strategy picks
+//      - hide strategy selection view
+//      - build round view
+$('#start-round').on('click', function() {
+    let pickedCheckboxes = [];
+
+    checkboxes = $('.strategies input');
+    for (let j = 0; j < checkboxes.length; j++) {
+        let checkbox = checkboxes[j];
+        if ( $(checkbox).is(':checked') ) {
+            pickedCheckboxes.push(checkbox);
+        }
+    }
+
+    for (let k = 0; k < pickedCheckboxes.length; k++) {
+        let pickedCheckbox = pickedCheckboxes[k];
+        for (let i = 0; i < strategies.length; i++) {
+            let strategy = strategies[i];
+            if ( $(pickedCheckbox).attr('data-strat') == strategy.number ) {
+                strategy.picked = $(pickedCheckbox).attr('data-player');
+            }
+        }
+        
+    }
+
+    $('strategies').hide();
+    createRoundMarkup();
+});
+
+
+// on end round
+$('#end-round').on('click', function() {
+    for (let i = 0; i < strategies.length; i++) {
+        const strategy = strategies[i];
+        strategy.picked = false;
+    }
+});
+
