@@ -430,9 +430,6 @@ h1, h2, h3, h4, h5, h6, p, label {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Slider'; }
-
 h1 {
   font-size: calc((2em + 1vw)); }
 
@@ -461,7 +458,7 @@ p, label {
   box-sizing: border-box; }
 
 body {
-  background-image: url("../img/star-background-1.jpg");
+  background-color: #333;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -476,13 +473,10 @@ body {
 
 .strategy {
   width: calc(12.5% - (0.5em + 0.25vw));
-  background: rgba(0, 0, 0, 0.7);
-  border-top: solid 4px #fff;
-  box-shadow: inset 0 0 72px rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.4);
   text-align: center;
   padding: calc((0.5em + 0.5vw)); }
   .strategy h3 {
-    text-transform: uppercase;
     margin-bottom: calc((0.5em + 0.5vw)); }
   .strategy.picked {
     opacity: 0.5; }
@@ -513,8 +507,8 @@ body {
   left: -9999px;
   visibility: hidden; }
   .strategy__player-select input[type="checkbox"]:checked ~ label {
-    background: #24b09f;
-    color: #fff;
+    background: #fff;
+    color: #333;
     border-color: transparent; }
 
 .strategy__player-select label {
@@ -526,8 +520,6 @@ body {
   padding: calc(1.5rem / 3);
   border-radius: 5px;
   margin-bottom: calc((0.5em + 0.5vw));
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
   cursor: pointer; }
   .strategy__player-select label:hover {
     color: rgba(255, 255, 255, 0.5); }
@@ -538,20 +530,35 @@ body {
 .round .module__foot {
   margin-top: 1.5rem; }
 
+body.player-count-6 .player {
+  width: calc((100% / 6) - (0.5em + 0.25vw)); }
+
+body.player-count-5 .player {
+  width: calc((100% / 5) - (0.5em + 0.25vw)); }
+
+body.player-count-4 .player {
+  width: calc((100% / 4) - (0.5em + 0.25vw)); }
+
+body.player-count-3 .player {
+  width: calc((100% / 3) - (0.5em + 0.25vw)); }
+
+body.player-count-2 .player {
+  width: calc((100% / 2) - (0.5em + 0.25vw)); }
+
 .player {
-  width: calc((100% / 6) - (0.5em + 0.25vw));
-  background: rgba(0, 0, 0, 0.7);
-  border-top: solid 4px #fff;
-  box-shadow: inset 0 0 72px rgba(0, 0, 0, 0.85);
-  text-align: center;
-  padding: calc((0.5em + 0.5vw)); }
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center; }
   .player h3 {
-    text-transform: uppercase;
     margin-bottom: calc((0.5em + 0.5vw)); }
   .player.passed {
     opacity: 0.5; }
     .player.passed input:not(:checked) ~ label {
       visibility: hidden; }
+  .player .player__race-image {
+    background-image: url("https://source.unsplash.com/random/400x600");
+    background-size: cover;
+    background-position: center center;
+    height: 25vh; }
   .player.player--red {
     border-color: #9b040c; }
   .player.player--yellow {
@@ -564,3 +571,38 @@ body {
     border-color: #222222; }
   .player.player--purple {
     border-color: #541f89; }
+  .player .player__turn-info {
+    padding: calc((0.5em + 0.5vw));
+    border-top: solid 4px #fff;
+    position: relative; }
+  .player .player__turn-number {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #fff;
+    border-radius: 50%;
+    color: #333; }
+  .player input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+    visibility: hidden; }
+    .player input[type="checkbox"]:checked ~ label {
+      background: #333;
+      color: #777; }
+    .player input[type="checkbox"].disabled ~ label {
+      opacity: 0.5;
+      pointer-events: none; }
+  .player label {
+    display: block;
+    color: #333;
+    font-weight: 700;
+    font-size: calc((0.65em + 0.25vw));
+    background: #bbb;
+    border: solid 1px transparent;
+    padding: calc(1.5rem / 3);
+    border-radius: 5px;
+    margin-bottom: calc((0.5em + 0.5vw));
+    cursor: pointer; }
+    .player label:hover {
+      background: #fff; }

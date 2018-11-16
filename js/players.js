@@ -33,8 +33,14 @@ const removePlayer = (id) => { // remove player
 // --------------------------------------------------------------------------------
 createPlayer("Aaron", "Universities of Jol-Nar", "purple");
 createPlayer("Jordan P.", "Naalu Collective", "black");
-createPlayer("Adam", "Clan of Saar"), "yellow";
+createPlayer("Adam", "Clan of Saar", "yellow");
 createPlayer("Trevor", "Federation of Sol", "blue");
 createPlayer("Jordan M.", "Nekro Virus", "red");
 createPlayer("Jared", "Arborec", "green");
 log(players);
+
+// add player count to body
+const countPlayers = () => {
+    $('body').addClass("player-count-" + players.length);
+}
+countPlayers();
