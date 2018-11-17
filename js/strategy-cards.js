@@ -104,8 +104,8 @@ watchStrategies();
 
 // create rounds markup
 $('#end-round').prop("disabled", true);
-let turnNumber = 1;
 const createRoundMarkup = () => { 
+    let turnNumber = 1;
 
     for (let i = 0; i < strategies.length; i++) {
 
@@ -129,7 +129,7 @@ const createRoundMarkup = () => {
                             <h3>${player.name}</h3>
                             <div class="field-row player__strat-button">
                                 <input type="checkbox" id="used-strat-${player.id}" name="used-strat"></input>
-                                <label for="used-strat-${player.id}">${strategy.title}</label>
+                                <label for="used-strat-${player.id}" class="${strategy.title}">${strategy.title}</label>
                             </div>
                             <div class="field-row player__pass-button">
                                 <input type="checkbox" id="pass-${player.id}" name="pass" class="disabled"></input>
@@ -172,6 +172,8 @@ $('#start-round').on('click', function() {
         }
         
     }
+
+    $('.round .module__body').empty();
 
     $('.strategies').slideUp();
     createRoundMarkup();

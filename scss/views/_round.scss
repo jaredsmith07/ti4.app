@@ -4,6 +4,7 @@
     }
     .module__foot {
         margin-top: $paragraph-margin;
+        text-align: center;
     }
 }
 
@@ -16,12 +17,11 @@ body {
 }
 
 .player {
-    background: rgba(#000, 0.5);
-    // box-shadow: inset 0 0 72px rgba(#000, 0.85);
+    background: rgba(#000, 0.4);
+    box-shadow: inset 0 0 72px rgba(#000, 0.85);
     text-align: center;
     h3 {
-        // text-transform: uppercase;
-        margin-bottom: $card-padding;
+        margin: $card-padding 0;
     }
     &.passed {
         opacity: 0.5;
@@ -32,30 +32,86 @@ body {
 
     // Player Races
     .player__race-image {
-        background-image: url('https://source.unsplash.com/random/400x600');
         background-size: cover;
         background-position: center center;
-        height: 25vh;
+        height: 35vh;
+    }
+    &.player--thearborec {
+        .player__race-image { background-image: url('../img/races/thearborec.jpg'); }
+    }
+    &.player--thebaronyofletnev {
+        .player__race-image { background-image: url('../img/races/thebaronyofletnev.jpg'); }
+    }
+    &.player--theclanofsaar {
+        .player__race-image { background-image: url('../img/races/theclanofsaar.jpg'); }
+    }
+    &.player--theembersofmuaat {
+        .player__race-image { background-image: url('../img/races/theembersofmuaat.jpg'); }
+    }
+    &.player--theemiratesofhacan {
+        .player__race-image { background-image: url('../img/races/theemiratesofhacan.jpg'); }
+    }
+    &.player--thefederationofsol {
+        .player__race-image { background-image: url('../img/races/thefederationofsol.jpg'); }
+    }
+    &.player--theghostsofcreuss {
+        .player__race-image { background-image: url('../img/races/theghostsofcreuss.jpg'); }
+    }
+    &.player--thel1z1xmindnet {
+        .player__race-image { background-image: url('../img/races/thel1z1xmindnet.jpg'); }
+    }
+    &.player--thementakcoalition {
+        .player__race-image { background-image: url('../img/races/thementakcoalition.jpg'); }
+    }
+    &.player--thenaalucollective {
+        .player__race-image { background-image: url('../img/races/thenaalucollective.jpg'); }
+    }
+    &.player--thenekrovirus {
+        .player__race-image { background-image: url('../img/races/thenekrovirus.jpg'); }
+    }
+    &.player--thesardakkn\'orr {
+        .player__race-image { background-image: url('../img/races/thesardakkn\'orr.jpg'); }
+    }
+    &.player--theuniversitiesofjol-nar {
+        .player__race-image { background-image: url('../img/races/theuniversitiesofjol-nar.jpg'); }
+    }
+    &.player--thewinnu {
+        .player__race-image { background-image: url('../img/races/thewinnu.jpg'); }
+    }
+    &.player--thexxchakingdom {
+        .player__race-image { background-image: url('../img/races/thexxchakingdom.jpg'); }
+    }
+    &.player--theyinbrotherhood {
+        .player__race-image { background-image: url('../img/races/theyinbrotherhood.jpg'); }
+    }
+    &.player--theyssariltribes {
+        .player__race-image { background-image: url('../img/races/theyssariltribes.jpg'); }
     }
 
     // Player Colors
     &.player--red {
-        border-color: $color-red;
+        .player__turn-info { border-color: $color-red; }
+        .player__turn-number { background-color: $color-red; }
     }
     &.player--yellow {
-        border-color: $color-yellow;
+        .player__turn-info { border-color: $color-yellow; }
+        .player__turn-number { background-color: $color-yellow; }
     }
     &.player--green {
-        border-color: $color-green;
+        .player__turn-info { border-color: $color-green; }
+        .player__turn-number { background-color: $color-green; }
     }
     &.player--blue {
-        border-color: $color-blue;
+        .player__turn-info { border-color: $color-blue; }
+        .player__turn-number { background-color: $color-blue; }
     }
     &.player--black {
-        border-color: $color-black;
+        .player__turn-info { border-color: $color-black; }
+        .player__turn-number { background-color: $color-black; }
     }
     &.player--purple {
-        border-color: $color-purple;
+        .player__turn-info { border-color: $color-purple; }
+        .player__turn-number { background-color: $color-purple; }
     }
 
     .player__turn-info {
@@ -69,9 +125,12 @@ body {
         top: 0;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        background: #fff;
         border-radius: 50%;
-        color: #333;
+        color: #fff;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5em;
+        font-weight: 700;
     }
 
     input[type="checkbox"] {
@@ -80,12 +139,12 @@ body {
         visibility: hidden;
         &:checked {
             & ~ label {
-                background: #333;
-                color: #777;
+                background: rgba(#222, 0.5) !important;
+                color: rgba( #fff, 0.5 );
             }
         }
         &.disabled ~ label {
-            opacity: 0.5;
+            opacity: 0.25;
             pointer-events: none;
         }
     }
@@ -99,10 +158,49 @@ body {
         padding: calc(#{$paragraph-margin} / 3);
         border-radius: $ui-radius;
         margin-bottom: $card-padding;
-        // @include spaced-letters;
         cursor: pointer;
         &:hover {
             background: #fff;
+        }
+    }
+    .player__strat-button {
+        margin: calc(#{$card-padding} * 2) 0;
+        label {
+            font-family: $secondary-font;
+            text-transform: uppercase;
+            color: #000;
+            background: #fff;
+            &.leadership {
+                color: $color-red;
+            }
+            &.diplomacy {
+                color: $color-orange;
+            }
+            &.politics {
+                color: $color-yellow;
+            }
+            &.construction {
+                color: $color-green;
+            }
+            &.trade {
+                color: $color-teal;
+            }
+            &.warfare {
+                color: $color-blue;
+            }
+            &.technology {
+                color: $color-navy-l;
+            }
+            &.imperial {
+                color: $color-purple;
+            }
+        }
+    }
+    .player__pass-button {
+        margin-bottom: $card-padding;
+        label {
+            max-width: 60%;
+            margin: 0 auto;
         }
     }
 }

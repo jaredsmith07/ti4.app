@@ -1,5 +1,6 @@
 // Button Base
 @mixin button {
+    font-family: $secondary-font;
     font-weight: 700;
     font-size: $p-font-size;
     border-radius: $ui-radius;
@@ -8,9 +9,10 @@
     cursor: pointer;
     line-height: 1;
     padding: 0.5em 1em;
+    text-transform: uppercase;
     @include font-smoothing;
     &[disabled] {
-        opacity: 0.5;
+        opacity: 0.25;
     }
 }
 

@@ -11,16 +11,19 @@ $ui-radius: 5px;
 $transition-time: 0.25s;
 
 // Typography
+$primary-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$secondary-font: 'Slider', $primary-font;
+
 $h1-font-size-value: '(2em + 1vw)';
 $h1-font-size: calc(#{$h1-font-size-value});
 
 $h2-font-size-value: '(1em + 0.25vw)';
 $h2-font-size: calc(#{$h2-font-size-value});
 
-$h3-font-size-value: '(0.85em + 0.25vw)';
+$h3-font-size-value: '(0.75em + 0.25vw)';
 $h3-font-size: calc(#{$h3-font-size-value});
 
-$p-font-size-value: '(0.85em + 0.25vw)';
+$p-font-size-value: '(0.75em + 0.25vw)';
 $p-font-size: calc(#{$p-font-size-value});
 
 $subp-font-size-value: '(0.65em + 0.25vw)';

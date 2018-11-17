@@ -31,12 +31,12 @@ const removePlayer = (id) => { // remove player
 
 // Run
 // --------------------------------------------------------------------------------
-createPlayer("Aaron", "Universities of Jol-Nar", "purple");
-createPlayer("Jordan P.", "Naalu Collective", "black");
-createPlayer("Adam", "Clan of Saar", "yellow");
-createPlayer("Trevor", "Federation of Sol", "blue");
-createPlayer("Jordan M.", "Nekro Virus", "red");
-createPlayer("Jared", "Arborec", "green");
+createPlayer("Aaron", "The Universities of Jol-Nar", "purple");
+createPlayer("Jordan P.", "The Naalu Collective", "black");
+createPlayer("Adam", "The Clan of Saar", "yellow");
+createPlayer("Trevor", "The Federation of Sol", "blue");
+createPlayer("Jordan M.", "The Nekro Virus", "red");
+createPlayer("Jared", "The Arborec", "green");
 log(players);
 
 // add player count to body
