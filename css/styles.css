@@ -550,7 +550,7 @@ body {
   display: block;
   color: rgba(255, 255, 255, 0.25);
   font-weight: 700;
-  font-size: calc((0.65em + 0.25vw));
+  font-size: calc(calc((0.75em + 0.25vw)) * 1.5);
   background: rgba(255, 255, 255, 0.05);
   padding: calc(1.5rem / 3);
   border-radius: 5px;
@@ -586,7 +586,8 @@ body.player-count-2 .player {
   box-shadow: inset 0 0 72px rgba(0, 0, 0, 0.85);
   text-align: center; }
   .player h3 {
-    margin: calc((0.5em + 0.5vw)) 0; }
+    margin: calc((0.5em + 0.5vw)) 0;
+    font-size: calc((0.75em + 0.25vw) * 2); }
   .player.passed {
     opacity: 0.5; }
     .player.passed input:not(:checked) ~ label {
@@ -655,7 +656,7 @@ body.player-count-2 .player {
     background-color: #541f89; }
   .player .player__turn-info {
     padding: calc((0.5em + 0.5vw));
-    border-top: solid 4px #fff;
+    border-top: solid 8px #fff;
     position: relative; }
   .player .player__turn-number {
     position: absolute;
@@ -664,9 +665,10 @@ body.player-count-2 .player {
     transform: translateX(-50%) translateY(-50%);
     border-radius: 50%;
     color: #fff;
-    width: 1.5em;
-    height: 1.5em;
-    line-height: 1.5em;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: calc((1em + 0.25vw));
     font-weight: 700; }
   .player input[type="checkbox"] {
     position: absolute;
@@ -697,7 +699,8 @@ body.player-count-2 .player {
       font-family: "Slider", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       text-transform: uppercase;
       color: #000;
-      background: #fff; }
+      background: #fff;
+      font-size: calc(calc((0.75em + 0.25vw)) * 1.5); }
       .player .player__strat-button label.leadership {
         color: #9b040c; }
       .player .player__strat-button label.diplomacy {

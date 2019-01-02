@@ -22,6 +22,7 @@ body {
     text-align: center;
     h3 {
         margin: $card-padding 0;
+        font-size: calc(#{$h3-font-size-value} * 2)
     }
     &.passed {
         opacity: 0.5;
@@ -116,7 +117,7 @@ body {
 
     .player__turn-info {
         padding: $card-padding;
-        border-top: solid 4px #fff;
+        border-top: solid 8px #fff;
         position: relative;
     }
 
@@ -127,9 +128,10 @@ body {
         transform: translateX(-50%) translateY(-50%);
         border-radius: 50%;
         color: #fff;
-        width: 1.5em;
-        height: 1.5em;
-        line-height: 1.5em;
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+        font-size: $h2-font-size;
         font-weight: 700;
     }
 
@@ -170,6 +172,7 @@ body {
             text-transform: uppercase;
             color: #000;
             background: #fff;
+            font-size: calc(#{$p-font-size} * 1.5);
             &.leadership {
                 color: $color-red;
             }

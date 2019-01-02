@@ -1,12 +1,11 @@
 {
-  "dependencies": {
-    "node-sass": "^4.10.0"
-  },
   "name": "ti4.io",
   "version": "1.0.0",
-  "description": "A companion app for TI4",
+  "description": "",
   "main": "index.js",
-  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jaredsmith07/ti4.io.git"
@@ -17,8 +16,9 @@
     "url": "https://github.com/jaredsmith07/ti4.io/issues"
   },
   "homepage": "https://github.com/jaredsmith07/ti4.io#readme",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch scss -o css"
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0"
   }
 }

@@ -84,7 +84,7 @@
         display: block;
         color: rgba(#fff, 0.25);
         font-weight: 700;
-        font-size: $subp-font-size;
+        font-size: calc(#{$p-font-size} * 1.5);
         background: rgba(#fff, 0.05);
         padding: calc(#{$paragraph-margin} / 3);
         border-radius: $ui-radius;

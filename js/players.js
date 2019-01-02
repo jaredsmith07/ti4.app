@@ -31,10 +31,10 @@ const removePlayer = (id) => { // remove player
 
 // Run
 // --------------------------------------------------------------------------------
-createPlayer("Aaron", "The Universities of Jol-Nar", "purple");
-createPlayer("Jordan P.", "The Naalu Collective", "black");
-createPlayer("Adam", "The Clan of Saar", "yellow");
-createPlayer("Trevor", "The Federation of Sol", "blue");
+createPlayer("Aaron", "The Universities of Jol-Nar", "blue");
+createPlayer("Jordan P.", "The Naalu Collective", "purple");
+createPlayer("Adam", "The L1Z1X Mindnet", "black");
+createPlayer("Trevor", "The Yssaril Tribes", "yellow");
 createPlayer("Jordan M.", "The Nekro Virus", "red");
 createPlayer("Jared", "The Arborec", "green");
 log(players);

@@ -11,6 +11,12 @@ let pickedStrategies = 0;
 
 // Functions
 // --------------------------------------------------------------------------------
+// class 
+
+
+
+
+// OLD BELOW
 const createStrategy = (number, title) => { // create new strategy
     strategies.push(
         {
