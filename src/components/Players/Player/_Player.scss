@@ -1,0 +1,16 @@
+.player__card {
+    text-align: center;
+}
+
+.player--purple { border-top: solid 4px $color-purple; }
+.player--blue { border-top: solid 4px $color-blue; }
+.player--green { border-top: solid 4px $color-green; }
+.player--yellow { border-top: solid 4px $color-yellow; }
+.player--red { border-top: solid 4px $color-red; }
+.player--black { border-top: solid 4px $color-black; }
+
+.player__score-controls {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}

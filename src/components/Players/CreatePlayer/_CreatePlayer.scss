@@ -1,0 +1,105 @@
+.create-player {
+    .flex-row {
+        justify-content: flex-start;
+    }
+    .form__field {
+        .flex-row {
+            flex-flow: row wrap;
+        }
+    }
+    .form__field-option {
+        width: auto;
+    }
+    
+    input[type="radio"]{
+        position: absolute;
+        left: -9999px;
+
+        &:checked ~ label {
+            opacity: 1;
+            &:after {
+                content: "";
+                position: absolute;
+                left: -3px;
+                top: -3px;
+                width: 3em;
+                height: 3em;
+                border: solid 3px $color-orange-l !important;
+                border-radius: calc(#{$ui-radius} + 3px);
+            }
+        }
+
+        &:disabled ~ label {
+            opacity: 0.15;
+            &:hover:before {
+                content: none;
+            }
+        }
+    }
+
+    label {
+        position: relative;
+        display: block;
+        color: transparent;
+        width: 3em;
+        height: 3em;
+        border-radius: $ui-radius;
+        margin: 0;
+        cursor: pointer;
+        opacity: 0.8;
+        &:hover:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3em;
+            height: 3em;
+            box-shadow: 0 0 0px 3px inset rgba(#fff, 0.3); 
+            border-radius: $ui-radius;
+        }
+    }
+}
+
+.create-player__race {
+    flex-basis: 200%;
+    img {
+        width: 3em;
+        height: 3em;
+        border-radius: $ui-radius;
+    }
+    
+}
+.create-player__color {
+    span {
+        opacity: 0;
+    }
+    label {
+        background-image: url('images/textures/real-carbon-fibre.png');
+        background-size: 30px;
+        background-blend-mode: multiply;
+        &[for="create-player-color-black"] {
+            background-color: $color-black; 
+            box-shadow: 0 0 0px 3px inset $color-black; 
+        }
+        &[for="create-player-color-blue"] {
+            background-color: $color-blue; 
+            box-shadow: 0 0 0px 3px inset $color-blue; 
+        }
+        &[for="create-player-color-green"] {
+            background-color: $color-green; 
+            box-shadow: 0 0 0px 3px inset $color-green; 
+        }
+        &[for="create-player-color-red"] {
+            background-color: $color-red; 
+            box-shadow: 0 0 0px 3px inset $color-red; 
+        }
+        &[for="create-player-color-purple"] {
+            background-color: $color-purple; 
+            box-shadow: 0 0 0px 3px inset $color-purple; 
+        }
+        &[for="create-player-color-yellow"] {
+            background-color: $color-yellow; 
+            box-shadow: 0 0 0px 3px inset $color-yellow; 
+        }
+    }
+}

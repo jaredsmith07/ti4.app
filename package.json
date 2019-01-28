@@ -1,24 +1,26 @@
 {
-  "name": "ti4.io",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ti4.app",
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jaredsmith07/ti4.io.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jaredsmith07/ti4.io/issues"
-  },
-  "homepage": "https://github.com/jaredsmith07/ti4.io#readme",
-  "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-rename": "^1.4.0"
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

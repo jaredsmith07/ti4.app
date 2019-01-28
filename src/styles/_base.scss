@@ -1,0 +1,28 @@
+* {
+	font-family: $primary-font;
+	box-sizing: border-box;
+}
+body {
+	background: #333;
+	// background-color: #272741;
+	// background-image: url('../img/star-background-2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	padding: 2em;
+	margin: 0 auto;
+	position: relative;
+}
+.module {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: calc(100% - 4em);
+}
+.card {
+	background: rgba(#000,0.5);
+	border-radius: $block-radius;
+	padding: $paragraph-margin;
+	// padding-bottom: 0;
+	margin-bottom: $paragraph-margin;
+}
