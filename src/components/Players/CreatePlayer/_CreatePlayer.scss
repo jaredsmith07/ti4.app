@@ -1,10 +1,12 @@
+$create-thumb-size: calc(48px + 1vw);
+
 .create-player {
-    .flex-row {
-        justify-content: flex-start;
-    }
+    // display: flex;
+    // flex-flow: row nowrap;
     .form__field {
         .flex-row {
             flex-flow: row wrap;
+            justify-content: flex-start;
         }
     }
     .form__field-option {
@@ -22,8 +24,8 @@
                 position: absolute;
                 left: -3px;
                 top: -3px;
-                width: 3em;
-                height: 3em;
+                width: $create-thumb-size;
+                height: $create-thumb-size;
                 border: solid 3px $color-orange-l !important;
                 border-radius: calc(#{$ui-radius} + 3px);
             }
@@ -41,8 +43,8 @@
         position: relative;
         display: block;
         color: transparent;
-        width: 3em;
-        height: 3em;
+        width: $create-thumb-size;
+        height: $create-thumb-size;
         border-radius: $ui-radius;
         margin: 0;
         cursor: pointer;
@@ -52,24 +54,31 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 3em;
-            height: 3em;
+            width: 100%;
+            height: 100%;
             box-shadow: 0 0 0px 3px inset rgba(#fff, 0.3); 
             border-radius: $ui-radius;
         }
     }
 }
 
+// .create-player__thumbnails {
+//     .form__field {
+//         display: inline-block;
+//     }
+// }
+
 .create-player__race {
-    flex-basis: 200%;
     img {
-        width: 3em;
-        height: 3em;
+        width: $create-thumb-size;
+        height: $create-thumb-size;
         border-radius: $ui-radius;
     }
-    
 }
+
 .create-player__color {
+    width: calc( ( #{$create-thumb-size} * 3) + ( #{$grid-margin} * 5 ) );
+    width: calc( ( (48px + 1vw) * 3) + ( (0.25em + 0.25vw) * 5 ) );
     span {
         opacity: 0;
     }

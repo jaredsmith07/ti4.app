@@ -1,0 +1,29 @@
+nav {
+    ul {
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    a {
+        display: block;
+        color: #fff;
+        background: blue;
+        padding: calc(#{$paragraph-margin} * 0.75) $paragraph-margin;
+        text-decoration: none;
+        font-size: 0.8em;
+        background: linear-gradient( rgba($color-blue, 0.25), rgba($color-blue, 0.9) );
+        &.active {
+            background: linear-gradient( rgba($color-orange, 0.25), rgba($color-orange, 0.9) );
+        }
+    }
+    li {
+        &:first-child a {
+            border-radius: $ui-radius 0 0 0;
+        }
+        &:last-child a {
+            border-radius: 0 $ui-radius 0 0;
+        }
+    }
+}

@@ -1,77 +1,70 @@
+// Breakpoints
+$mobile-size:       1024px;
+
 // Layout
-$grid-margin-value: "(0.5em + 0.25vw)";
-$grid-margin: calc(#{$grid-margin-value});
+$grid-margin:       calc(0.25em + 0.25vw);
 
 // Interface
-$card-padding-value: "(0.5em + 0.5vw)";
-$card-padding: calc(#{$card-padding-value});
+$card-padding:      calc(0.5em + 0.5vw);
 
-$block-radius: 5px;
-$ui-radius: 5px;
-$transition-time: 0.25s;
+$block-radius:      5px;
+$ui-radius:         5px;
+$transition-time:   0.25s;
 
 // Typography
-$primary-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-$secondary-font: 'Slider', $primary-font;
+$primary-font:      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$secondary-font:    'Slider', $primary-font;
 
-$h1-font-size-value: '(2em + 1vw)';
-$h1-font-size: calc(#{$h1-font-size-value});
 
-$h2-font-size-value: '(1em + 0.25vw)';
-$h2-font-size: calc(#{$h2-font-size-value});
+$h1-font-size:      calc(2em + 1vw);
+$h2-font-size:      calc(1em + 0.25vw);
+$h3-font-size:      calc(0.75em + 0.25vw);
+$p-font-size:       calc(0.75em + 0.25vw);
+$subp-font-size:    calc(0.65em + 0.25vw);
 
-$h3-font-size-value: '(0.75em + 0.25vw)';
-$h3-font-size: calc(#{$h3-font-size-value});
-
-$p-font-size-value: '(0.75em + 0.25vw)';
-$p-font-size: calc(#{$p-font-size-value});
-
-$subp-font-size-value: '(0.65em + 0.25vw)';
-$subp-font-size: calc(#{$subp-font-size-value});
-
-$paragraph-margin: 1.5rem;
+$paragraph-margin:  1.5rem;
 
 // Colors
-$color-red: #9b040c;
-$color-red-l: lighten($color-red, 12%);
-$color-red-d: darken($color-red, 12%);
+$color-red:       #9b040c;
+$color-red-l:       lighten($color-red, 12%);
+$color-red-d:       darken($color-red, 12%);
 
-$color-orange: #e76d23;
-$color-orange-l: lighten($color-orange, 12%);
-$color-orange-d: darken($color-orange, 12%);
+$color-orange:    #e76d23;
+$color-orange-l:    lighten($color-orange, 12%);
+$color-orange-d:    darken($color-orange, 12%);
 
 // $color-yellow: #f0b432;
-$color-yellow: #e6dd32;
-$color-yellow-l: lighten($color-yellow, 12%);
-$color-yellow-d: darken($color-yellow, 12%);
+$color-yellow:    #e6dd32;
+$color-yellow-l:    lighten($color-yellow, 12%);
+$color-yellow-d:    darken($color-yellow, 12%);
 
-$color-green: #1ba85d;
-$color-green-l: lighten($color-green, 12%);
-$color-green-d: darken($color-green, 12%);
+$color-green:     #1ba85d;
+$color-green-l:     lighten($color-green, 12%);
+$color-green-d:     darken($color-green, 12%);
 
-$color-teal: #24b09f;
-$color-teal-l: lighten($color-teal, 12%);
-$color-teal-d: darken($color-teal, 12%);
+$color-teal:      #24b09f;
+$color-teal-l:      lighten($color-teal, 12%);
+$color-teal-d:      darken($color-teal, 12%);
 
-$color-blue: #2894d2;
-$color-blue-l: lighten($color-blue, 12%);
-$color-blue-d: darken($color-blue, 12%);
+$color-blue:      #2894d2;
+$color-blue-l:      lighten($color-blue, 12%);
+$color-blue-d:      darken($color-blue, 12%);
 
-$color-navy: #133180;
-$color-navy-l: lighten($color-navy, 12%);
-$color-navy-d: darken($color-navy, 12%);
+$color-navy:      #133180;
+$color-navy-l:      lighten($color-navy, 12%);
+$color-navy-d:      darken($color-navy, 12%);
 
-$color-purple: #541f89;
-$color-purple-l: lighten($color-purple, 12%);
-$color-purple-d: darken($color-purple, 12%);
+$color-purple:    #541f89;
+$color-purple-l:    lighten($color-purple, 12%);
+$color-purple-d:    darken($color-purple, 12%);
 
-$color-black: #444;
-$color-black-l: lighten($color-black, 12%);
-$color-black-d: darken($color-black, 12%);
+$color-black:     #444;
+$color-black-l:     lighten($color-black, 12%);
+$color-black-d:     darken($color-black, 12%);
 
-$color-white: #ddd;
-$color-white-l: #fff;
-$color-white-d: #bbb;
+$color-white:     #ddd;
+$color-white-l:   #fff;
+$color-white-d:   #bbb;
 
 $neutral-color: #808080;
 $neutral-color-lllll: lighten($neutral-color, 45%);
@@ -85,10 +78,10 @@ $neutral-color-ddd: darken($neutral-color, 27%);
 $neutral-color-dddd: darken($neutral-color, 36%);
 $neutral-color-ddddd: darken($neutral-color, 45%);
 
-$affirm-color: #4AC747;
-$affirm-color-l: lighten($affirm-color, 12%);
-$affirm-color-d: darken($affirm-color, 12%);
+$affirm-color:    #4AC747;
+$affirm-color-l:    lighten($affirm-color, 12%);
+$affirm-color-d:    darken($affirm-color, 12%);
 
-$negate-color: #C74757;
-$negate-color-l: lighten($negate-color, 12%);
-$negate-color-d: darken($negate-color, 12%);
+$negate-color:    #C74757;
+$negate-color-l:    lighten($negate-color, 12%);
+$negate-color-d:    darken($negate-color, 12%);

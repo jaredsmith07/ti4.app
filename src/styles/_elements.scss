@@ -23,11 +23,11 @@
 }
 @mixin button-md {
     @include button;
-    font-size: calc(#{$p-font-size-value}*0.85)
+    font-size: calc(#{$p-font-size}*0.85)
 }
 @mixin button-sm {
     @include button;
-    font-size: calc(#{$p-font-size-value}*0.7)
+    font-size: calc(#{$p-font-size}*0.7)
 }
 .button-lg {@include button-lg;}
 .button-md {@include button-md;}

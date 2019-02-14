@@ -1,3 +1,10 @@
+.players {
+    margin-bottom: $grid-margin;
+    @media (max-width: 760px) {
+        flex-flow: row wrap;
+    }
+}
+
 .player__card {
     text-align: center;
 }

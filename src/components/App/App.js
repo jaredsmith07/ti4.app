@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import PlayerContainer from './../Players/PlayerContainer';
+import {
+    BrowserRouter,
+    Route,
+    Redirect
+} from 'react-router-dom';
 
-// LOGIC
-// ==================================================
+import Navigation from './../Navigation/Navigation';
+import Score from './../Score/Score';
+import PlayerContainer from './../Players/PlayerContainer';
+import RoundContainer from './../Round/RoundContainer';
+
+
 
 const createId = () => {
     return Math.random().toString(16).slice(-6); // for random id, aplha-numeric
@@ -19,9 +27,6 @@ class Race {
 new Race('The Embers of Muaat', 'tbd', 'tbd');
 
 
-// RENDER
-// ==================================================
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -33,7 +38,9 @@ class App extends Component {
                     key: createId(),
                     name: 'Aaron',
                     race: 'The Embers of Muaat',
+                    raceId: '3',
                     color: 'black',
+                    colorId: '0',
                     score: 0
                 },
                 {
@@ -41,7 +48,9 @@ class App extends Component {
                     key: createId(),
                     name: 'Adam',
                     race: 'The Emirates of Hacaan',
+                    raceId: '4',
                     color: 'red',
+                    colorId: '4',
                     score: 0
                 },
                 {
@@ -49,7 +58,9 @@ class App extends Component {
                     key: createId(),
                     name: 'Jordan',
                     race: 'The Yssaril Tribes',
+                    raceId: '16',
                     color: 'blue',
+                    colorId: '1',
                     score: 0
                 }
             ],
@@ -110,11 +121,130 @@ class App extends Component {
                     secondary: '<li>Spend 1 token from your strategy pool to draw 1 secret objective.</li>',
                     tip: 'A player might choose this card to draw an additional secret objective, granting him additional routes to victory.'
                 },
+            ],
+            races: [
+                {
+                    id: 0,
+                    name: 'The Arborec',
+                    picked: false,
+                },
+                {
+                    id: 1,
+                    name: 'The Barony of Letnev',
+                    picked: false,
+                },
+                {
+                    id: 2,
+                    name: 'The Clan of Saar',
+                    picked: false,
+                },
+                {
+                    id: 3,
+                    name: 'The Embers of Muaat',
+                    picked: true,
+                },
+                {
+                    id: 4,
+                    name: 'The Emirates of Hacan',
+                    picked: true,
+                },
+                {
+                    id: 5,
+                    name: 'The Federation of Sol',
+                    picked: false,
+                },
+                {
+                    id: 6,
+                    name: 'The Ghosts of Creuss',
+                    picked: false,
+                },
+                {
+                    id: 7,
+                    name: 'The L1Z1X Mindnet',
+                    picked: false,
+                },
+                {
+                    id: 8,
+                    name: 'The Mentak Coalition',
+                    picked: false,
+                },
+                {
+                    id: 9,
+                    name: 'The Naalu Collective',
+                    picked: false,
+                },
+                {
+                    id: 10,
+                    name: 'The Nekro Virus',
+                    picked: false,
+                },
+                {
+                    id: 11,
+                    name: "The Sardakk N'orr",
+                    picked: false,
+                },
+                {
+                    id: 12,
+                    name: 'The Universities of Jol-nar',
+                    picked: false,
+                },
+                {
+                    id: 13,
+                    name: 'The Winnu',
+                    picked: false,
+                },
+                {
+                    id: 14,
+                    name: 'The Xxcha Kingdom',
+                    picked: false,
+                },
+                {
+                    id: 15,
+                    name: 'The Yin Brotherhood',
+                    picked: false,
+                },
+                {
+                    id: 16,
+                    name: 'The Yssaril Tribes',
+                    picked: true,
+                },
+            ],
+            colors: [
+                {
+                    id: 0,
+                    name: 'black',
+                    picked: true
+                },
+                {
+                    id: 1,
+                    name: 'blue',
+                    picked: true
+                },
+                {
+                    id: 2,
+                    name: 'green',
+                    picked: false
+                },
+                {
+                    id: 3,
+                    name: 'purple',
+                    picked: false
+                },
+                {
+                    id: 4,
+                    name: 'red',
+                    picked: true
+                },
+                {
+                    id: 5,
+                    name: 'yellow',
+                    picked: false
+                }
             ]
         };
     }
 
-    handleAddPlayer = (race, color, name) => {
+    handleAddPlayer = (race, raceId, color, colorId, name) => {
         this.setState({
             players: [
                 ...this.state.players,
@@ -123,7 +253,9 @@ class App extends Component {
                     key: createId(),
                     name,
                     race,
+                    raceId,
                     color,
+                    colorId,
                     score: 0
                 }
             ]
@@ -131,29 +263,79 @@ class App extends Component {
     }
 
     handleRemovePlayer = (id) => {
-        this.setState( prevState => {
+        
+        let pickedColor = this.state.players.find( c => c.id === id ).colorId;
+        let pickedRace = this.state.players.find( d => d.id === id ).raceId;
+
+        // Set color object to unpicked
+        this.setState( (prevState) => {
             return {
-                players: prevState.players.filter( p => p.id !== id )
+                ...prevState.colors[pickedColor].picked = false,
+                ...prevState.races[pickedRace].picked = false,
+                players: prevState.players.filter( p => p.id !== id ),
             }
         });
     }
 
     handleScoreChange = (index, delta) => {
-        this.setState( prevState => {
+        this.setState( (prevState) => {
             return {
                 score: prevState.players[index].score += delta
             }
         });
     }
 
+    handlePickedRace = (id, state) => {
+        this.setState( (prevState) => {
+            return {
+                ...prevState.races[id].picked = state
+            }
+        });
+    }
+
+    handlePickedColor = (id, state) => {
+        this.setState( (prevState) => {
+            return {
+                ...prevState.colors[id].picked = state
+            }
+        });
+    }
+
 	render() {
 		return (
-			<PlayerContainer
-                players={this.state.players}
-                changeScore={this.handleScoreChange}
-                addPlayer={this.handleAddPlayer}
-                removePlayer={this.handleRemovePlayer} 
-            />
+            <BrowserRouter>
+                <div>
+                    <Navigation />
+                    <Score />
+                    <Redirect to="/players" />
+                    <Route
+                        path="/players"
+                        render={ () =>
+                            <PlayerContainer
+                                players={this.state.players}
+                                races={this.state.races}
+                                pickedRace={this.handlePickedRace}
+                                colors={this.state.colors}
+                                pickedColor={this.handlePickedColor}
+                                changeScore={this.handleScoreChange}
+                                addPlayer={this.handleAddPlayer}
+                                removePlayer={this.handleRemovePlayer} 
+                            />
+                        }
+                    />
+                    <Route
+                        path="/round"
+                        render={ () =>
+                            <RoundContainer
+                                players={this.state.players}
+                                strategies={this.state.strategies}
+                            />
+                        }
+                    />
+                    
+                    
+                </div>
+            </BrowserRouter>
 		);
 	}
 }

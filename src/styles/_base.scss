@@ -5,11 +5,11 @@
 body {
 	background: #333;
 	// background-color: #272741;
-	// background-image: url('../img/star-background-2.jpg');
+	// background-image: url('/images/star-background-2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height: 100vh;
-	padding: 2em;
+	padding: calc( #{$grid-margin} * 3 );
 	margin: 0 auto;
 	position: relative;
 }
@@ -20,9 +20,8 @@ body {
 	width: calc(100% - 4em);
 }
 .card {
-	background: rgba(#000,0.5);
+	background: rgba($color-blue,0.1);
+	border: solid 1px rgba($color-blue,0.5);
 	border-radius: $block-radius;
 	padding: $paragraph-margin;
-	// padding-bottom: 0;
-	margin-bottom: $paragraph-margin;
 }
