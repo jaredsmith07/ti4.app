@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {
     BrowserRouter,
-    Route,
-    Redirect
+    // Route,
+    // Redirect
 } from 'react-router-dom';
 
 import Navigation from './../Navigation/Navigation';
@@ -304,13 +304,12 @@ class App extends Component {
 	render() {
 		return (
             <BrowserRouter>
-                <div>
+                <div class="app">
                     <Navigation />
-                    <Score />
-                    <Redirect to="/players" />
-                    <Route
-                        path="/players"
-                        render={ () =>
+                    <div id="view-container" class="view-container">
+                        <div class="view view-1">
+                            <Score />
+                            <h1>Players</h1>
                             <PlayerContainer
                                 players={this.state.players}
                                 races={this.state.races}
@@ -321,20 +320,53 @@ class App extends Component {
                                 addPlayer={this.handleAddPlayer}
                                 removePlayer={this.handleRemovePlayer} 
                             />
-                        }
-                    />
-                    <Route
-                        path="/round"
-                        render={ () =>
+                            {/* <Redirect to="/players" />
+                            <Route
+                                path="/players"
+                                render={ () =>
+                                    <PlayerContainer
+                                        players={this.state.players}
+                                        races={this.state.races}
+                                        pickedRace={this.handlePickedRace}
+                                        colors={this.state.colors}
+                                        pickedColor={this.handlePickedColor}
+                                        changeScore={this.handleScoreChange}
+                                        addPlayer={this.handleAddPlayer}
+                                        removePlayer={this.handleRemovePlayer} 
+                                    />
+                                }
+                            /> */}
                             <RoundContainer
                                 players={this.state.players}
                                 strategies={this.state.strategies}
                             />
-                        }
-                    />
-                    
-                    
+                            {/* <Route
+                                path="/round"
+                                render={ () =>
+                                    <RoundContainer
+                                        players={this.state.players}
+                                        strategies={this.state.strategies}
+                                    />
+                                }
+                            /> */}
+                        </div>
+                        <div class="view view-2">
+                            <h1>Round</h1>
+                            <div className="strategies flex-row">
+                                {this.state.strategies.map( (strategy) => (
+                                    <div class="card">{ strategy.name }</div>
+                                ))}
+                            </div>
+                        </div>
+                        <div class="view view-3">
+                            <h1>Agenda</h1>
+                        </div>
+                        <div class="view view-4">
+                            <h1>Settings</h1>
+                        </div>
+                    </div>
                 </div>
+                    
             </BrowserRouter>
 		);
 	}

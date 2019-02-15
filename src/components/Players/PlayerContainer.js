@@ -7,7 +7,6 @@ class PlayerContainer extends Component {
 	render() {
 		return ( 
             <div>
-                <h1>Players</h1>
                 <div className="players flex-row">
                     {this.props.players.map( (player, index) => (
                         <Player

@@ -1,0 +1,30 @@
+$navigation-height: 70px;
+
+.app {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: calc(100vh - #{$navigation-height}) $navigation-height;
+}
+nav {
+    grid-row: 2;
+}
+.view-container {
+    grid-row: 1;
+    height: calc(100vh - #{$navigation-height});
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: all ease-in-out 0.5s;
+    &.view-1--active { left: 0; }
+    &.view-2--active { left: -100vw; }
+    &.view-3--active { left: -200vw; }
+    &.view-4--active { left: -300vw; }
+}
+.view {
+    padding: calc( #{$grid-margin} * 3 );
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+}
