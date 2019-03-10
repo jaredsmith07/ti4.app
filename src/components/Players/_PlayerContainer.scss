@@ -1,0 +1,6 @@
+.players__list {
+    margin-bottom: var(--grid-margin);
+    @media (max-width: 760px) {
+        flex-flow: row wrap;
+    }
+}

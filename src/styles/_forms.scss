@@ -9,7 +9,7 @@ label {
 select,
 textarea,
 input[type] {
-    border-radius: $ui-radius;
+    border-radius: var(--ui-radius);
     border: none;
     outline: none;
     padding: calc(#{$paragraph-margin} * 0.5);

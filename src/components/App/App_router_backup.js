@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
-// import {
-//     BrowserRouter,
-//     Route,
-//     Redirect
-// } from 'react-router-dom';
+import {
+    BrowserRouter,
+    // Route,
+    // Redirect
+} from 'react-router-dom';
 
-import Navigation from './../Navigation/Navigation';
-import RulesContainer from './../Rules/RulesContainer';
-
-import PlayerContainer from './../Players/PlayerContainer';
-import CreatePlayer from './../Players/CreatePlayer/CreatePlayer';
-
-import ScoreContainer from './../Score/ScoreContainer';
-
-import RoundContainer from './../Round/RoundContainer';
-
-import AgendaContainer from './../Agenda/AgendaContainer';
-
-import SettingsContainer from './../Settings/SettingsContainer';
+import Navigation from '../Navigation/Navigation';
+import ScoreContainer from '../Score/ScoreContainer';
+import PlayerContainer from '../Players/PlayerContainer';
+import RoundContainer from '../Round/RoundContainer';
+import SettingsContainer from '../Settings/SettingsContainer';
 
 
 
@@ -48,15 +40,15 @@ class App extends Component {
                     name: 'Aaron',
                     race: 'The Embers of Muaat',
                     raceId: '3',
-                    color: 'yellow',
-                    colorId: '5',
+                    color: 'black',
+                    colorId: '0',
                     score: 0
                 },
                 {
                     id: createId(),
                     key: createId(),
                     name: 'Adam',
-                    race: 'The Emirates of Hacan',
+                    race: 'The Emirates of Hacaan',
                     raceId: '4',
                     color: 'red',
                     colorId: '4',
@@ -222,7 +214,7 @@ class App extends Component {
                 {
                     id: 0,
                     name: 'black',
-                    picked: false
+                    picked: true
                 },
                 {
                     id: 1,
@@ -247,10 +239,9 @@ class App extends Component {
                 {
                     id: 5,
                     name: 'yellow',
-                    picked: true
+                    picked: false
                 }
-            ],
-            // showCreatePlayerModal: false
+            ]
         };
     }
 
@@ -311,95 +302,74 @@ class App extends Component {
         });
     }
 
-    handleShowModal = (modal, state) => {
-        console.log(modal, state);
-        const modalContainer = document.querySelector('.modal-container');
-        const selectedModal = document.querySelector('.modal__' + modal);
-        const modals = document.querySelectorAll('.modal');
-        if ( state === true ) {
-            modalContainer.classList.add('modal--show');
-            selectedModal.classList.add('modal--show');
-        } else {
-            modalContainer.classList.remove('modal--show');
-            modals.forEach(modal => {
-                modal.classList.remove('modal--show');
-            });
-        }
-    }
-
 	render() {
 		return (
-            <div className="app">
-                <Navigation />
-                <div id="view-container" className="view-container">
-
-                    <div className="view view__players">
-                        {/* <ScoreContainer /> */}
-                        <h1>Players</h1>
-                        <PlayerContainer
-                            players={this.state.players}
-                            races={this.state.races}
-                            pickedRace={this.handlePickedRace}
-                            colors={this.state.colors}
-                            pickedColor={this.handlePickedColor}
-                            changeScore={this.handleScoreChange}
-                            addPlayer={this.handleAddPlayer}
-                            removePlayer={this.handleRemovePlayer} 
-                            handleModal={this.handleShowModal}
-                        />
-                    </div>
-
-                    <div className="view view__score">
-                        <h1>Score</h1>
-                        <ScoreContainer
-                            players={this.state.players}
-                            changeScore={this.handleScoreChange}
-                        />
-                    </div>
-
-                    <div className="view view__game">
-                        <h1>Round</h1>
-                        <RoundContainer
-                            players={this.state.players}
-                            strategies={this.state.strategies}
-                        />
-                    </div>
-
-                    <div className="view view__agenda">
-                        <h1>Agenda</h1>
-                        <AgendaContainer />
-                    </div>
-
-                    <div className="view view__rules">
-                        <h1>Rules</h1>
-                        <RulesContainer />
-                    </div>
-
-                    <div className="view view__settings">
-                        <h1>Settings</h1>
-                        <SettingsContainer />
-                    </div>
-
-                </div>
-                <div className="modal-container">
-                    <div className="modal modal__create-player players__create-player card">
-                        <button className="modal__close-btn" onClick={ () => this.handleShowModal('create-player', false) }>
-                            <svg xlinkHref="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-                        </button>
-                        <h2>Create player</h2>
-                        <CreatePlayer
-                            addPlayer={this.state.addPlayer}
-                            races={this.state.races}
-                            pickedRace={this.handlePickedRace}
-                            colors={this.state.colors}
-                            pickedColor={this.handlePickedColor}
-                            addPlayer={this.handleAddPlayer}
-                            // toggleModal={this.showCreatePlayerModal}
-                            // handleModal={this.handleShowModal}
-                        />
+            <BrowserRouter>
+                <div className="app">
+                    <Navigation />
+                    <div id="view-container" className="view-container">
+                        <div className="view view-1">
+                            {/* <ScoreContainer /> */}
+                            <h1>Players</h1>
+                            <PlayerContainer
+                                players={this.state.players}
+                                races={this.state.races}
+                                pickedRace={this.handlePickedRace}
+                                colors={this.state.colors}
+                                pickedColor={this.handlePickedColor}
+                                changeScore={this.handleScoreChange}
+                                addPlayer={this.handleAddPlayer}
+                                removePlayer={this.handleRemovePlayer} 
+                            />
+                            {/* <Redirect to="/players" />
+                            <Route
+                                path="/players"
+                                render={ () =>
+                                    <PlayerContainer
+                                        players={this.state.players}
+                                        races={this.state.races}
+                                        pickedRace={this.handlePickedRace}
+                                        colors={this.state.colors}
+                                        pickedColor={this.handlePickedColor}
+                                        changeScore={this.handleScoreChange}
+                                        addPlayer={this.handleAddPlayer}
+                                        removePlayer={this.handleRemovePlayer} 
+                                    />
+                                }
+                            /> */}
+                            <RoundContainer
+                                players={this.state.players}
+                                strategies={this.state.strategies}
+                            />
+                            {/* <Route
+                                path="/round"
+                                render={ () =>
+                                    <RoundContainer
+                                        players={this.state.players}
+                                        strategies={this.state.strategies}
+                                    />
+                                }
+                            /> */}
+                        </div>
+                        <div className="view view-2">
+                            <h1>Round</h1>
+                            <div className="strategies flex-row">
+                                {this.state.strategies.map( (strategy) => (
+                                    <div className="card">{ strategy.name }</div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="view view-3">
+                            <h1>Agenda</h1>
+                        </div>
+                        <div className="view view-4">
+                            <h1>Settings</h1>
+                            <SettingsContainer />
+                        </div>
                     </div>
                 </div>
-            </div>
+                    
+            </BrowserRouter>
 		);
 	}
 }

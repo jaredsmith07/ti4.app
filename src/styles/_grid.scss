@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: calc(#{$grid-margin} * -1);
+    margin: calc( var(--grid-margin) * -1);
     & > * {
         width: 100%;
-        margin: $grid-margin;
+        margin: var(--grid-margin);
     }
 }

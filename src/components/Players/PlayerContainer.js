@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import CreatePlayer from './CreatePlayer/CreatePlayer';
+// import CreatePlayer from './CreatePlayer/CreatePlayer';
 import Player from './Player/Player';
 
 class PlayerContainer extends Component {
 
 	render() {
 		return ( 
-            <div>
-                <div className="players flex-row">
+            <div className="players">
+                <div className="players__list flex-row">
                     {this.props.players.map( (player, index) => (
                         <Player
                             key={player.id}
@@ -17,19 +17,11 @@ class PlayerContainer extends Component {
                             color={player.color}
                             score={player.score}
                             index={index}
-                            changeScore={this.props.changeScore}
                             removePlayer={this.props.removePlayer} 
                         />
                     ))}
                 </div>
-
-                <CreatePlayer
-                    addPlayer={this.props.addPlayer}
-                    races={this.props.races}
-                    pickedRace={this.props.pickedRace}
-                    colors={this.props.colors}
-                    pickedColor={this.props.pickedColor}
-                />
+                <button className="button-lg primary-button" onClick={ () => this.props.handleModal('create-player', true) }>Add player</button>
             </div>
 		);
 	}

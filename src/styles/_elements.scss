@@ -3,9 +3,9 @@
     font-family: $secondary-font;
     font-weight: 700;
     font-size: $p-font-size;
-    border-radius: $ui-radius;
+    border-radius: var(--ui-radius);
     color: #fff;
-    background: $neutral-color;
+    background: var(--neutral-color);
     cursor: pointer;
     line-height: 1;
     padding: 0.5em 1em;
@@ -36,8 +36,8 @@
 
 // Button Colors
 @mixin primary-button {
-    background: $color-orange;
-    &:hover { background: $color-orange-d; }
+    background: var(--color-orange);
+    &:hover { background: var(--color-orange-d); }
 }
 @mixin neutral-dark-button {
     background: $neutral-color-ddd;
