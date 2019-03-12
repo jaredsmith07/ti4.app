@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Slider';
+    src: url('fonts/Slider.woff2') format('woff2'),
+        url('fonts/Slider.woff') format('woff'),
+        url('fonts/Slider.ttf') format('truetype'),
+        url('fonts/Slider.svg#Slider') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p, label {
+    @include font-smoothing;
+    color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 0 $paragraph-margin;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    // font-family: $secondary-font;
+}
+
+h1 {
+    font-size: $h1-font-size;
+}
+h2 {
+    font-size: $h2-font-size;
+}
+h3 {
+    font-size: $h3-font-size;
+}
+p, label {
+    font-size: $p-font-size;
+}
+label {
+    margin-bottom: calc(#{$paragraph-margin} * 0.25);
+}

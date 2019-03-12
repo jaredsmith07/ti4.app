@@ -1,0 +1,34 @@
+// Global
+@import "styles/_normalize.scss";
+
+@import "styles/_variables.scss";
+@import "styles/_mixins.scss";
+
+@import "styles/_elements.scss";
+@import "styles/_typography.scss";
+@import "styles/_grid.scss";
+@import "styles/_forms.scss";
+
+@import "styles/_base.scss";
+
+// Components
+@import "components/App/_App.scss";
+
+@import "components/Navigation/_Navigation.scss";
+
+@import "components/Players/_PlayerContainer.scss";
+@import "components/Players/Player/_Player.scss";
+@import "components/Players/CreatePlayer/_CreatePlayer.scss";
+
+@import "components/Score/_ScoreContainer.scss";
+
+@import "components/Round/_RoundContainer.scss";
+
+@import "components/Agenda/_AgendaContainer.scss";
+
+@import "components/Rules/_RulesContainer.scss";
+
+@import "components/Settings/_SettingsContainer.scss";
+
+// @import "views/_strategy-cards.scss";
+// @import "views/_round.scss";

@@ -1,0 +1,34 @@
+$navigation-height: 60px;
+
+.app {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: calc(100vh - #{$navigation-height}) $navigation-height;
+    position: relative;
+}
+nav {
+    grid-row: 2;
+}
+.view-container {
+    grid-row: 1;
+    height: calc(100vh - #{$navigation-height});
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: all ease-in-out 0.5s;
+    &.view__1--active { left: 0; }
+    &.view__2--active { left: -100vw; }
+    &.view__3--active { left: -200vw; }
+    &.view__4--active { left: -300vw; }
+    &.view__5--active { left: -400vw; }
+    &.view__6--active { left: -500vw; }
+}
+.view {
+    padding: calc( var(--grid-margin) * 3 );
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
