@@ -135,5 +135,6 @@ $create-thumb-size: calc(48px + 1vw);
     }
     svg {
         width: 100%;
+        max-width: 100%;
     }
 }
