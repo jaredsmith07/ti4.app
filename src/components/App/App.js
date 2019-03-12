@@ -336,6 +336,7 @@ class App extends Component {
                     <div className="view view__players">
                         {/* <ScoreContainer /> */}
                         <h1>Players</h1>
+                        <p>*Testing Github Pages*</p>
                         <PlayerContainer
                             players={this.state.players}
                             races={this.state.races}
