@@ -2,7 +2,7 @@
   "name": "ti4.app",
   "version": "0.2.0",
   "private": true,
-  "homepage": "http://jaredsmith07.github.io/ti4.app",
+  "homepage": "http://ti4.app",
   "dependencies": {
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
