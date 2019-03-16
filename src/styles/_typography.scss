@@ -10,7 +10,7 @@
 
 h1, h2, h3, h4, h5, h6, p, label {
     @include font-smoothing;
-    color: #fff;
+    color: hsl( var(--color-neutral), 100%, 1);
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    // font-family: $secondary-font;
+    font-family: var(--secondary-font);
 }
 
 h1 {
@@ -31,8 +31,9 @@ h3 {
     font-size: $h3-font-size;
 }
 p, label {
+    font-family: var(--primary-font);
     font-size: $p-font-size;
 }
 label {
-    margin-bottom: calc(#{$paragraph-margin} * 0.25);
+    margin-bottom: calc( #{$paragraph-margin} * 0.25);
 }

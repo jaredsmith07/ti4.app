@@ -14,7 +14,7 @@ const Player = (props) => {
                     <h2>{ props.name }</h2>
                     <p>{ props.race }</p>
                 </div>
-                <button className="button-md neutral-dark-button" onClick={ () => props.removePlayer(props.id) }>Delete</button>
+                <button className="button-md" onClick={ () => props.removePlayer(props.id) }>Delete</button>
             </div>  
         </div>
     );

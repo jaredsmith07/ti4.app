@@ -24,15 +24,11 @@ nav {
         height: $navigation-height;
         position: relative;
         text-align: center;
-        background: rgba(#fff, 0.25);
+        // background: linear-gradient( hsl( var(--color-neutral), 52%, 0.2), hsl( var(--color-neutral), 52%, 0.50) );
+        background: linear-gradient( hsl( var(--color-blue), 52%, 0.2), hsl( var(--color-blue), 52%, 0.45) );
         &.active {
-            background: rgba(#fff, 0.5);
+            background: linear-gradient( hsl( var(--color-orange), 52%, 0.25), hsl( var(--color-orange), 52%, 0.90) );
         }
-        // background: linear-gradient( rgba($color-blue, 0.25), rgba($color-blue, 0.9) );
-        // &.active,
-        // &:active {
-        //     background: linear-gradient( rgba($color-orange, 0.25), rgba($color-orange, 0.9) );
-        // }
         svg {
             fill: #fff;
             width: 24px;

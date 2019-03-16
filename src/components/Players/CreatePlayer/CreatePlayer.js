@@ -39,6 +39,8 @@ class CreatePlayer extends Component {
         this.props.pickedRace(this.state.createPlayerRace, true)
         this.props.pickedColor(this.state.createPlayerColor, true)
 
+        this.props.handleModal('create-player', false);
+
         e.target.reset();
         this.setState({ createPlayerName: ''});
     }

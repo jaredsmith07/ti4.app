@@ -1,11 +1,12 @@
 * {
-	font-family: $primary-font;
 	box-sizing: border-box;
 }
 body {
-	background: #333;
+	background: hsl( var(--color-neutral), 12%, 1);
+	// background: color-neutral(-20);
+	// background: #990000;
 	// background-color: #272741;
-	// background-image: url('/images/star-background-2.jpg');
+	background-image: url('/images/star-background-2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height: 100vh;
@@ -20,28 +21,31 @@ body {
 	width: calc(100% - 4em);
 }
 .card {
-	// background: rgba($color-blue,0.1);
+	// background: hsl( var(--color-blue), 50%, 0.1);;
 	// border: solid 1px rgba($color-blue,0.5);
 	background: var(--card-background);
 	border: var(--card-border);
 	border-radius: var(--block-radius);
-	padding: var(--card-padding);
+	padding: $card-padding;
 }
 
 .modal-container {
-    display: none; 
+	left: 100vw;
+    display: flex; 
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 0;
+    // left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
 	// background: rgba(#000, 0.95);
-	background: #111;
+	background: hsl( var(--color-neutral), 8%, 1);
 	padding: $paragraph-margin;
+	transition: transform 0.2s ease-in-out;
 	&.modal--show {
-		display: flex;
+		transform: translateX(-100vw);
+		// display: flex;
 	}
 }
 .modal {
@@ -57,7 +61,7 @@ body {
 }
 .modal__close-btn {
 	position: absolute;
-	padding: calc(var(--card-padding) / 2);
+	padding: calc( #{$card-padding} / 2);
 	top: 0;
 	right: 0;
 	border-left: var(--card-border);
@@ -65,12 +69,12 @@ body {
 	border-radius: 0 0 0 var(--block-radius);
 	line-height: 0;
 	svg {
-		fill: #fff;
+		fill: hsl( var(--color-neutral), 100%, 100% );
 		height: 32px;
 		width: 32px;
 	}
 	&:hover {
-		background: rgba(#fff, 0.15);
+		background: hsl( var(--color-neutral), 50%, 0.85 );
 		border: none;
 	}
 }

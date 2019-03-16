@@ -12,5 +12,5 @@ input[type] {
     border-radius: var(--ui-radius);
     border: none;
     outline: none;
-    padding: calc(#{$paragraph-margin} * 0.5);
+    padding: calc( #{$paragraph-margin} * 0.5);
 }

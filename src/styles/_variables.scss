@@ -1,102 +1,104 @@
-:root {
-    
-    // Colors
-    $color-white:       #fff;
-    --color-white:      #{$color-white};
+// Constant Variables
+// ================================================================================
 
-    $color-red:        rgb(155, 4, 12);
-    --color-red:        #{$color-red};
-    --color-red-l:      #{lighten( $color-red, 12%)};
-    --color-red-d:      #{darken( $color-red, 12%)};
-
-    $color-orange:     rgb(231, 109, 35);
-    --color-orange:     #{$color-orange};
-    --color-orange-l:   #{lighten( $color-orange, 12%)};
-    --color-orange-d:   #{darken( $color-orange, 12%)};
-
-    $color-yellow:     rgb(230, 221, 50);
-    --color-yellow:     #{$color-yellow};
-    --color-yellow-l:   #{lighten( $color-yellow, 12%)};
-    --color-yellow-d:   #{darken( $color-yellow, 12%)};
-
-    $color-green:      rgb(27, 168, 93);
-    --color-green:      #{$color-green};
-    --color-green-l:    #{lighten( $color-green, 12%)};
-    --color-green-d:    #{darken( $color-green, 12%)};
-
-    $color-teal:       rgb(36, 176, 159);
-    --color-teal:       #{$color-teal};
-    --color-teal-l:     #{lighten( $color-teal, 12%)};
-    --color-teal-d:     #{darken( $color-teal, 12%)};
-
-    $color-blue:       rgb(40, 148, 210);
-    --color-blue:       #{$color-blue};
-    --color-blue-l:     #{lighten( $color-blue, 12%)};
-    --color-blue-d:     #{darken( $color-blue, 12%)};
-
-    $color-navy:       rgb(19, 49, 128);
-    --color-navy:       #{$color-navy};
-    --color-navy-l:     #{lighten( $color-navy, 12%)};
-    --color-navy-d:     #{darken( $color-navy, 12%)};
-
-    $color-purple:     rgb(84, 31, 137);
-    --color-purple:     #{$color-purple};
-    --color-purple-l:   #{lighten( $color-purple, 12%)};
-    --color-purple-d:   #{darken( $color-purple, 12%)};
-
-    $color-black:      rgb(11, 11, 11);
-    --color-black:      #{$color-black};
-    --color-black-l:    #{lighten( $color-black, 12%)};
-    --color-black-d:    #{darken( $color-black, 12%)};
-
-    // Layout
-    --grid-margin:      calc(0.25em + 0.25vw);
-
-    // Interface
-    --card-padding:     calc(0.5em + 0.5vw);
-    --card-border:      solid 1px #{rgba($color-white, 0.15)};
-    --card-background:  rgba(255, 255, 255 ,0.05);
-
-    --block-radius:      5px;
-    --ui-radius:         5px;
-    
-    --transition-time:   0.25s;
-}
+// Layout
+$grid-margin:           calc(0.25em + 0.25vw);
 
 // Breakpoints
-$mobile-size:       1024px;    
+$mobile-size:           1024px;    
+
+// Interface
+$card-padding:          calc(0.5em + 0.5vw);
+$transition-time:       0.25s;
+$navigation-height:     60px;
 
 // Typography
-$primary-font:      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-$secondary-font:    'Slider', $primary-font;
+$h1-font-size:          calc(1.5em + 1vw);
+$h2-font-size:          calc(1em + 0.25vw);
+$h3-font-size:          calc(0.75em + 0.25vw);
+$p-font-size:           calc(0.75em + 0.25vw);
+$subp-font-size:        calc(0.65em + 0.25vw);
+
+$paragraph-margin:      1.5rem;
 
 
-$h1-font-size:      calc(2em + 1vw);
-$h2-font-size:      calc(1em + 0.25vw);
-$h3-font-size:      calc(0.75em + 0.25vw);
-$p-font-size:       calc(0.75em + 0.25vw);
-$subp-font-size:    calc(0.65em + 0.25vw);
+// Dynamic Variables
+// ================================================================================
 
-$paragraph-margin:  1.5rem;
+:root {
+    // Theme Colors (Hue, Saturation)
+    --color-gray:      0, 0%,;
+    --color-red:        357, 66%;
+    --color-orange:     23, 80%;
+    --color-yellow:     59, 68%;
+    --color-green:      141, 55%;
+    --color-teal:       173, 66%;
+    --color-blue:       202, 68%;
+    --color-navy:       223, 74%;
+    --color-purple:     269, 46%;
 
+    // Interface Colors (Hue, Saturation)
+    --color-neutral:    223, 12%;
+    --color-affirm:     119, 53%;
+    --color-negate:     353, 53%;
 
+    // Interface
+    --card-border:      solid 1px hsl( var(--color-blue), 50%, 0.5);
+    --card-background:  hsl( var(--color-blue), 50%, 0.15);
 
-$neutral-color: #808080;
-$neutral-color-lllll: lighten($neutral-color, 45%);
-$neutral-color-llll: lighten($neutral-color, 36%);
-$neutral-color-lll: lighten($neutral-color, 27%);
-$neutral-color-ll: lighten($neutral-color, 18%);
-$neutral-color-l: lighten($neutral-color, 9%);
-$neutral-color-d: darken($neutral-color, 9%);
-$neutral-color-dd: darken($neutral-color, 18%);
-$neutral-color-ddd: darken($neutral-color, 27%);
-$neutral-color-dddd: darken($neutral-color, 36%);
-$neutral-color-ddddd: darken($neutral-color, 45%);
+    --block-radius:     5px;
+    --ui-radius:        5px;
+    
+    // Typography
+    --primary-font:     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --secondary-font:   'Slider', var(--primary-font);
+}
 
-$affirm-color:    #4AC747;
-$affirm-color-l:    lighten($affirm-color, 12%);
-$affirm-color-d:    darken($affirm-color, 12%);
+// Theme Colors
+// $color-white:       #fff;
+// --color-white:      #{$color-white};
 
-$negate-color:    #C74757;
-$negate-color-l:    lighten($negate-color, 12%);
-$negate-color-d:    darken($negate-color, 12%);
+// $color-red:        rgb(144, 29, 35);
+// --color-red:        #{$color-red};
+// --color-red-l:      #{lighten( $color-red, 12%)};
+// --color-red-d:      #{darken( $color-red, 12%)};
+
+// $color-orange:     rgb(231, 109, 35);
+// --color-orange:     #{$color-orange};
+// --color-orange-l:   #{lighten( $color-orange, 12%)};
+// --color-orange-d:   #{darken( $color-orange, 12%)};
+
+// $color-yellow:     rgb(212, 208, 41);
+// --color-yellow:     #{$color-yellow};
+// --color-yellow-l:   #{lighten( $color-yellow, 12%)};
+// --color-yellow-d:   #{darken( $color-yellow, 12%)};
+
+// $color-green:      rgb(55, 189, 101);
+// --color-green:      #{$color-green};
+// --color-green-l:    #{lighten( $color-green, 12%)};
+// --color-green-d:    #{darken( $color-green, 12%)};
+
+// $color-teal:       rgb(36, 176, 159);
+// --color-teal:       #{$color-teal};
+// --color-teal-l:     #{lighten( $color-teal, 12%)};
+// --color-teal-d:     #{darken( $color-teal, 12%)};
+
+// $color-blue:       rgb(40, 148, 210);
+// --color-blue:       #{$color-blue};
+// --color-blue-l:     #{lighten( $color-blue, 12%)};
+// --color-blue-d:     #{darken( $color-blue, 12%)};
+
+// $color-navy:       rgb(19, 49, 128);
+// --color-navy:       #{$color-navy};
+// --color-navy-l:     #{lighten( $color-navy, 12%)};
+// --color-navy-d:     #{darken( $color-navy, 12%)};
+
+// $color-purple:     rgb(112, 61, 165);
+// --color-purple:     #{$color-purple};
+// --color-purple-l:   #{lighten( $color-purple, 12%)};
+// --color-purple-d:   #{darken( $color-purple, 12%)};
+
+// $color-black:      rgb(11, 11, 11);
+// --color-black:      #{$color-black};
+// --color-black-l:    #{lighten( $color-black, 12%)};
+// --color-black-d:    #{darken( $color-black, 12%)};

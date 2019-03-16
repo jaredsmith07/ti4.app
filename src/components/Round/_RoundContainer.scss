@@ -1,7 +1,7 @@
 .strategies {
     text-align: center;
     .card {
-        margin-bottom: var(--grid-margin);
+        margin-bottom: $grid-margin;
     }
     h2 {
         margin: 0;

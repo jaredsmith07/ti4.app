@@ -17,7 +17,7 @@ import RoundContainer from './../Round/RoundContainer';
 
 import AgendaContainer from './../Agenda/AgendaContainer';
 
-import SettingsContainer from './../Settings/SettingsContainer';
+// import SettingsContainer from './../Settings/SettingsContainer';
 
 
 
@@ -227,7 +227,7 @@ class App extends Component {
                 {
                     id: 1,
                     name: 'blue',
-                    picked: true
+                    picked: false
                 },
                 {
                     id: 2,
@@ -242,12 +242,12 @@ class App extends Component {
                 {
                     id: 4,
                     name: 'red',
-                    picked: true
+                    picked: false
                 },
                 {
                     id: 5,
                     name: 'yellow',
-                    picked: true
+                    picked: false
                 }
             ],
             // showCreatePlayerModal: false
@@ -335,8 +335,7 @@ class App extends Component {
 
                     <div className="view view__players">
                         {/* <ScoreContainer /> */}
-                        <h1>Players</h1>
-                        <p>*Testing Github Pages*</p>
+                        <h1>Setup</h1>
                         <PlayerContainer
                             players={this.state.players}
                             races={this.state.races}
@@ -376,10 +375,10 @@ class App extends Component {
                         <RulesContainer />
                     </div>
 
-                    <div className="view view__settings">
+                    {/* <div className="view view__settings">
                         <h1>Settings</h1>
                         <SettingsContainer />
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className="modal-container">
@@ -389,14 +388,12 @@ class App extends Component {
                         </button>
                         <h2>Create player</h2>
                         <CreatePlayer
-                            addPlayer={this.state.addPlayer}
+                            addPlayer={this.handleAddPlayer}
                             races={this.state.races}
                             pickedRace={this.handlePickedRace}
                             colors={this.state.colors}
                             pickedColor={this.handlePickedColor}
-                            addPlayer={this.handleAddPlayer}
-                            // toggleModal={this.showCreatePlayerModal}
-                            // handleModal={this.handleShowModal}
+                            handleModal={this.handleShowModal}
                         />
                     </div>
                 </div>
