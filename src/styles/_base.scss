@@ -35,18 +35,18 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    // left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-	// background: rgba(#000, 0.95);
-	background: hsl( var(--color-neutral), 8%, 1);
+	background: linear-gradient( hsl( var(--color-blue), 12%, 1), hsl( var(--color-blue), 4%, 1));
 	padding: $paragraph-margin;
 	transition: transform 0.2s ease-in-out;
 	&.modal--show {
 		transform: translateX(-100vw);
-		// display: flex;
 	}
+	// @media (min-width: $mobile-size) {
+
+	// }
 }
 .modal {
 	width: 100%;
@@ -54,9 +54,17 @@ body {
 	max-width: 760px;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	position: relative;
 	&.modal--show {
 		display: block;
+	}
+	@media (min-width: $mobile-size) {
+		position: relative;
+	}
+	@media (max-width: $mobile-size) {
+		
+		padding: 0;
+		border: none;
+		background: transparent;
 	}
 }
 .modal__close-btn {
@@ -64,9 +72,6 @@ body {
 	padding: calc( #{$card-padding} / 2);
 	top: 0;
 	right: 0;
-	border-left: var(--card-border);
-	border-bottom: var(--card-border);
-	border-radius: 0 0 0 var(--block-radius);
 	line-height: 0;
 	svg {
 		fill: hsl( var(--color-neutral), 100%, 100% );
