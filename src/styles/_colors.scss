@@ -1,0 +1,30 @@
+// Color Functions
+// @function color-neutral($lvl:0) {
+//     @if $lvl > 0 {
+//         @return lighten($color-neutral, $lvl);
+//     }
+//     @if $lvl < 0 {
+//         @return darken($color-neutral, $lvl * -1 );
+//     }
+//     @if $lvl == 0 {
+//         @return $neutral-color;
+//     }
+// }
+
+// Original Colors
+    // // Theme Colors
+    // --color-gray:      hsl(0, 0%, 100%);
+    // --color-red:        hsl(357, 66%, 34%);
+    // --color-orange:     hsl(23, 80%, 52%);
+    // --color-yellow:     hsl(59, 68%, 50%);
+    // --color-green:      hsl(141, 55%, 48%);
+    // --color-teal:       hsl(173, 66%, 42%);
+    // --color-blue:       hsl(202, 68%, 49%);
+    // --color-navy:       hsl(223, 74%, 29%);
+    // --color-purple:     hsl(269, 46%, 44%);
+    // --color-black:      hsl(0, 0%, 4%);
+
+    // // Interface Colors
+    // --color-neutral:    hsl(223, 40%, 29%);
+    // --color-affirm:     hsl(119, 53%, 53%);
+    // --color-negate:     hsl(353, 53%, 53%);
