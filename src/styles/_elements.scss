@@ -24,18 +24,22 @@
 }
 @mixin button-md {
     @include button;
-    font-size: calc( #{$p-font-size} * 0.85)
+    font-size: calc( #{$p-font-size} * 0.9);
+    font-family: var(--primary-font);
+    text-transform: none;
 }
 @mixin button-sm {
     @include button;
-    font-size: calc( #{$p-font-size} * 0.7)
+    font-size: calc( #{$p-font-size} * 0.8);
+    font-family: var(--primary-font);
+    text-transform: none;
 }
 .button-lg {@include button-lg;}
 .button-md {@include button-md;}
 .button-sm {@include button-sm;}
 
 
-// Button Colors
+// Button Standard Colors
 @mixin primary-button {
     background: hsl( var(--color-orange), 50%, 1);
     &:hover { background: hsl( var(--color-orange), 56%, 1); }
@@ -62,3 +66,45 @@
 .neutral-light-button { @include neutral-light-button; }
 .affirm-button { @include affirm-button; }
 .negate-button { @include negate-button; }
+
+// Button Theme Colors
+@mixin red-button {
+    background: hsl( var(--color-red), 50%, 1);
+    &:hover { background: hsl( var(--color-red), 56%, 1); }
+}
+@mixin orange-button {
+    background: hsl( var(--color-orange), 50%, 1);
+    &:hover { background: hsl( var(--color-orange), 56%, 1); }
+}
+@mixin yellow-button {
+    background: hsl( var(--color-yellow), 40%, 1);
+    &:hover { background: hsl( var(--color-yellow), 46%, 1); }
+}
+@mixin green-button {
+    background: hsl( var(--color-green), 40%, 1);
+    &:hover { background: hsl( var(--color-green), 46%, 1); }
+}
+@mixin teal-button {
+    background: hsl( var(--color-teal), 40%, 1);
+    &:hover { background: hsl( var(--color-teal), 46%, 1); }
+}
+@mixin blue-button {
+    background: hsl( var(--color-blue), 50%, 1);
+    &:hover { background: hsl( var(--color-blue), 56%, 1); }
+}
+@mixin navy-button {
+    background: hsl( var(--color-navy), 50%, 1);
+    &:hover { background: hsl( var(--color-navy), 56%, 1); }
+}
+@mixin purple-button {
+    background: hsl( var(--color-purple), 50%, 1);
+    &:hover { background: hsl( var(--color-purple), 56%, 1); }
+}
+.button--red{ @include red-button; }
+.button--orange{ @include orange-button; }
+.button--yellow{ @include yellow-button; }
+.button--green{ @include green-button; }
+.button--teal{ @include teal-button; }
+.button--blue{ @include blue-button; }
+.button--navy{ @include navy-button; }
+.button--purple{ @include purple-button; }
