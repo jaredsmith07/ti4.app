@@ -4,6 +4,29 @@
         margin-bottom: $grid-margin;
     }
     h2 {
-        margin: 0;
+        margin-bottom: 0.5em;
+    }
+}
+
+.strategy__Leadership {
+    border: solid 1px hsl( var(--color-red), 50%, 0.5);
+    background: hsl( var(--color-red), 50%, 0.15);
+}
+
+.strategy__players {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    button {
+        margin: 0.25em;
+        display: block;
+        padding: 0.5em 1em;
+        border-radius: var(--ui-radius);
+        background: hsl( var(--color-neutral), 50%, 0.8);
+        color: hsl( var(--color-neutral), 100%, 1);
+        font-family: var(--primary-font);
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
