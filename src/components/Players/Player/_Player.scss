@@ -22,7 +22,7 @@
             cursor: pointer;
         }
     }
-    @media (min-width: $mobile-size ) {
+    @media (min-width: $tablet-size ) {
         button {
             display: none;
         }

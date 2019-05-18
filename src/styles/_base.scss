@@ -3,16 +3,13 @@
 }
 body {
 	background: hsl( var(--color-neutral), 12%, 1);
-	// background: color-neutral(-20);
-	// background: #990000;
-	// background-color: #272741;
 	background-image: url('/images/star-background-2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height: 100vh;
-	// padding: calc( #{$grid-margin} * 3 );
 	margin: 0 auto;
 	position: relative;
+	touch-action: manipulation;
 }
 .module {
 	position: absolute;
@@ -74,7 +71,7 @@ body {
 	&.modal--show {
 		transform: translateX(-100vw);
 	}
-	// @media (min-width: $mobile-size) {
+	// @media (min-width: $tablet-size) {
 
 	// }
 }
@@ -87,10 +84,10 @@ body {
 	&.modal--show {
 		display: block;
 	}
-	@media (min-width: $mobile-size) {
+	@media (min-width: $tablet-size) {
 		position: relative;
 	}
-	@media (max-width: $mobile-size) {
+	@media (max-width: $tablet-size) {
 		
 		padding: 0;
 		border: none;

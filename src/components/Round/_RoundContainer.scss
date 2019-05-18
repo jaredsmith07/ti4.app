@@ -1,13 +1,18 @@
 .strategies {
     text-align: center;
     flex-flow: row wrap;
+    justify-content: center;
     .card {
-        flex-basis: calc( 50% - (#{$grid-margin} * 2) );
+        flex-basis: 35%;
+        // flex-basis: calc( 50% - (#{$grid-margin} * 2) );
         margin-bottom: $grid-margin;
+        @media (min-width: $mobile-size) {
+            flex-basis: calc( 25% - (#{$grid-margin} * 2) );
+        }
     }
     h2 {
         font-size: $subp-font-size;
-        margin-bottom: 0.5em;
+        margin-bottom: 1em;
     }
 }
 
@@ -16,7 +21,9 @@
     // flex-flow: row wrap;
     // justify-content: center;
     button {
-        margin: 0.25em;
+        display: block;
+        width: calc(100% - 1em);
+        margin: 0.5em;
     }
     // button {
     //     margin: 0.25em;

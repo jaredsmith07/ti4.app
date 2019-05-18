@@ -80,7 +80,8 @@ class App extends Component {
                     primary: '<li>Gain 3 command tokens.</li><li>Spend any amount of influence to gain 1 command token for every 3 influence spent.</li>',
                     secondary: '<li>Spend any amount of influence to gain 1 command token for every 3 influence spent.</li>',
                     tip: 'A player might choose this card to gain more command tokens, enabling him to perform more actions during the action phase.',
-                    color: 'red'
+                    color: 'red',
+                    picked: ''
                 },
                 {
                     id: 2,
@@ -88,7 +89,8 @@ class App extends Component {
                     primary: '<li>Choose 1 system other than the Mecatol Rex system that contains a plant you control; Each other player places a command token from his reinforcements in the chosen system. Then ready each exhausted planet you control in that system.</li>',
                     secondary: '<li>Spend 1 token from your strategy pool to ready up to 2 exhausted planets.</li>',
                     tip: 'A player might choose this card if he feels threatened, to prevent other players from attacking his system.',
-                    color: 'orange'
+                    color: 'orange',
+                    picked: ''
                 },
                 {
                     id: 3,
@@ -96,7 +98,8 @@ class App extends Component {
                     primary: '<li>Choose a player other than the speaker. That player gains the speaker token.</li><li>Draw 2 action cards.</li><li>Look at the top 2 cards of the agenda deck. Place each card on the top or bottom of the deck in any order.</li>',
                     secondary: '<li>Spend 1 token from your strategy pool to draw 2 action cards.</li>',
                     tip: 'A player might choose this card to draw action cards, increasing the variety of abilities that are available to him.',
-                    color: 'yellow'
+                    color: 'yellow',
+                    picked: ''
                 },
                 {
                     id: 4,
@@ -104,7 +107,8 @@ class App extends Component {
                     primary: '<li>Place 1 PDS or 1 space dock on a planet you control.</li><li>Place 1 PDS on a planet you control.</li>',
                     secondary: '<li>Place 1 token from your strategy pool in any system; you may palce either 1 space dock or 1 PDS on a planet you control in that system.</li>',
                     tip: 'A player might choose this card to produce planetary structures, such as space docks, and PDF units.',
-                    color: 'green'
+                    color: 'green',
+                    picked: ''
                 },
                 {
                     id: 5,
@@ -112,7 +116,8 @@ class App extends Component {
                     primary: '<li>Gain 3 trade goods.</li><li>Replenish commodities.</li><li>Choose any number of other players. Those players use the secondary ability.</li>',
                     secondary: '<li>Spend 1 token from your strategy pool to replenish commodities.</li>',
                     tip: 'A player might choose this card to gain trade goods and commodities, which he could use to produce additional units or trade to other players.',
-                    color: 'teal'
+                    color: 'teal',
+                    picked: ''
                 },
                 {
                     id: 6,
@@ -120,7 +125,8 @@ class App extends Component {
                     primary: '<li>Remove 1 of your command tokens from the game board; then, gain 1 command token.</li><li>Redistribute any number of the command tokens on your command sheet.</li>',
                     secondary: '<li>Spend 1 token from your strategy pool to use the PRODUCTION ability of 1 of your space docks in your home system.</li>',
                     tip: 'A player might choose this card to allow some of his ships to move twive, or to build a unit and move it during the same game round.',
-                    color: 'blue'
+                    color: 'blue',
+                    picked: ''
                 },
                 {
                     id: 7,
@@ -128,7 +134,8 @@ class App extends Component {
                     primary: '<li>Research 1 technology.</li><li>Spend 6 resources to research 1 technology.</li>',
                     secondary: '<li>Spend 1 token from your strategy pool and 4 resources to research 1 technology.</li>',
                     tip: 'A player might choose this card to research a new technolgoy that would grant him a new ability or unit upgrade.',
-                    color: 'navy'
+                    color: 'navy',
+                    picked: ''
                 },
                 {
                     id: 8,
@@ -136,7 +143,8 @@ class App extends Component {
                     primary: '<li>Immediately score 1 public objective if you fulfill its requirements.</li><li>Gain 1 victory card if you control Mecatol Rex; otherwise, draw 1 secret objective.</li>',
                     secondary: '<li>Spend 1 token from your strategy pool to draw 1 secret objective.</li>',
                     tip: 'A player might choose this card to draw an additional secret objective, granting him additional routes to victory.',
-                    color: 'purple'
+                    color: 'purple',
+                    picked: ''
                 },
             ],
             races: [
@@ -295,6 +303,14 @@ class App extends Component {
         });
     }
 
+    handleStratPick = (index, delta) => {
+        this.setState( (prevState) => {
+            return {
+                picked: prevState.strategies[index].picked = delta
+            }
+        });
+    }
+    
     handleScoreChange = (index, delta) => {
         this.setState( (prevState) => {
             return {
@@ -370,6 +386,7 @@ class App extends Component {
                         <RoundContainer
                             players={this.state.players}
                             strategies={this.state.strategies}
+                            pickStrat={this.handleStratPick}
                         />
                     </div>
 
