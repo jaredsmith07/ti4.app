@@ -1,18 +1,33 @@
 .strategies {
-    text-align: center;
     flex-flow: row wrap;
     justify-content: center;
     .card {
-        flex-basis: 35%;
-        // flex-basis: calc( 50% - (#{$grid-margin} * 2) );
+        // flex-basis: 42%;
+        flex-basis: calc( 50% - (#{$grid-margin} * 2) );
         margin-bottom: $grid-margin;
+        padding: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
         @media (min-width: $mobile-size) {
             flex-basis: calc( 25% - (#{$grid-margin} * 2) );
         }
     }
     h2 {
-        font-size: $subp-font-size;
-        margin-bottom: 1em;
+        font-size: calc(0.5em + 0.5vw);
+        // font-family: var(--primary-font);
+        // text-transform: none;
+        // letter-spacing: 0;
+        // margin-bottom: 1em;
+        margin: 0;
+    }
+    .strategy__number {
+        margin: 0;
+        font-size: calc(0.75em + 0.5vw);
+        font-family: var(--secondary-font);
+        font-weight: 700;
+        padding: $card-padding;
+        // border-right: solid 1px #fff;
     }
 }
 
@@ -22,8 +37,8 @@
     // justify-content: center;
     button {
         display: block;
-        width: calc(100% - 1em);
-        margin: 0.5em;
+        width: 100%;
+        margin-top: 0.5em;
     }
     // button {
     //     margin: 0.25em;
@@ -37,4 +52,28 @@
     //         cursor: pointer;
     //     }
     // }
+}
+
+.droppable {
+    // background: #555;
+    // width: 250px;
+    min-height: 7em;
+    // margin: 32px;
+    padding: $card-padding;
+    margin: 2em;
+    & > * {
+        background: #fff;
+        padding: 12px;
+        border-radius: 3px;
+        margin: 12px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:active {
+            cursor: grab;
+        }
+    }
+    &:hover > *:active {
+        opacity:0.5;
+    } 
 }
