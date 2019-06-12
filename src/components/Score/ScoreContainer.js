@@ -5,8 +5,8 @@ class ScoreContainer extends Component {
 
 	render() {
 		return (
-			<div className="score">
-                <div className="score__player-list">
+			<div className="score__container">
+                <div className="score__player-list card card--red flex-row">
                     {this.props.players.map( (player, index) => (
 						<ScorePlayer
                             key={player.id}

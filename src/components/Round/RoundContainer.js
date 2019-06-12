@@ -1,38 +1,46 @@
 import React, { Component } from 'react';
-import DndTest from '../dnd/DndTest';
+import StratCard from './StratCard/StratCard';
+
+import { DragDropContextProvider } from 'react-dnd'
+import TouchBackend from 'react-dnd-touch-backend';
 
 class RoundContainer extends Component {
 
 	render() {
 		return (
-			<div className="round">
+			<div className="round__container">
+				<DragDropContextProvider backend={TouchBackend}>
+					<div className="round-strats card">
+						<h2>Strategies</h2>
+						<p>Drag and drop the strategies to the players.</p>
+						<div className="round-strats__list flex-row">
 
-				<DndTest />
+							{this.props.strategies.map( (strategy, index) => (
+								<StratCard
+									key={strategy.id}
+									id={strategy.id}
+									name={strategy.name}
+									color={strategy.color}
+									index={index}
+									pickStrat={this.props.pickStrat} 
+								/>
+							))}
 
-				<div className="strategies flex-row">
-
-					
-
-					{this.props.strategies.map( (strategy, index) => (
-						<div className={"card card--" + strategy.color} key={strategy.id}>
-							<p className="strategy__number">{ strategy.id }</p>
-							<h2>{ strategy.name }</h2>
-							<div className="strategy__players">
-{/* 
-							{this.props.players.map(player => (
-								<button
-									type="button"
-									class={"button-md button--" + strategy.color}
-									onClick={ () => this.props.pickStrat(index, player.name) }>
-									{ player.name }
-								</button>
-							))} */}
-							
-							</div>
 						</div>
-					))}
+					</div>
+					<div className="round-players flex-row">
 
-				</div>
+						{this.props.players.map(player => (
+							<div className="card">
+								<p>{player.name}</p>
+								<div className="dropzone">
+
+								</div>
+							</div>
+						))}
+
+					</div>
+				</DragDropContextProvider>
 			</div>
 		);
 	}

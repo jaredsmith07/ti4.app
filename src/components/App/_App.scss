@@ -43,4 +43,12 @@ nav {
     overflow-x: hidden;
     overflow-y: scroll;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

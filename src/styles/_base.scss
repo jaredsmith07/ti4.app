@@ -22,6 +22,9 @@ body {
 	border: var(--card-border);
 	border-radius: var(--block-radius);
 	padding: $card-padding;
+	box-shadow:
+		0 1px 2px 1px hsl( var(--color-neutral), 5%, 0.5),
+		0 8px 16px 0 hsl( var(--color-neutral), 15%, 0.5);
 	&.card--red {
 		border: solid 1px hsl( var(--color-red), 50%, 0.5);
     	background: hsl( var(--color-red), 50%, 0.15);
@@ -53,6 +56,64 @@ body {
 	&.card--purple {
 		border: solid 1px hsl( var(--color-purple), 50%, 0.5);
     	background: hsl( var(--color-purple), 50%, 0.15);
+	}
+	&.card--gradient {
+		&.card--red {
+			background: linear-gradient(
+				180deg,
+				hsl( var(--color-red), 50%, 0.45),
+				hsl( var(--color-red), 50%, 0.15)
+			);
+		}
+		&.card--orange {
+			background: linear-gradient(
+				180deg,
+				hsl( var(--color-orange), 50%, 0.45),
+				hsl( var(--color-orange), 50%, 0.15)
+			);
+		}
+		&.card--yellow {
+			background: linear-gradient(
+				180deg,
+				hsl( var(--color-yellow), 50%, 0.45),
+				hsl( var(--color-yellow), 50%, 0.15)
+			);
+		}
+		&.card--green {
+			background: linear-gradient(
+				180deg,
+				hsl( var(--color-green), 50%, 0.45),
+				hsl( var(--color-green), 50%, 0.15)
+			);
+		}
+		&.card--teal {
+			background: linear-gradient(
+				180deg,
+				hsl( var(--color-teal), 50%, 0.45),
+				hsl( var(--color-teal), 50%, 0.15)
+			);
+		}
+		&.card--blue {
+			background: linear-gradient(
+				180deg,
+				hsl( var(--color-blue), 50%, 0.45),
+				hsl( var(--color-blue), 50%, 0.15)
+			);
+		}
+		&.card--navy {
+			background: linear-gradient(
+				180deg,
+				hsl( var(--color-navy), 50%, 0.45),
+				hsl( var(--color-navy), 50%, 0.15)
+			);
+		}
+		&.card--purple {
+			background: linear-gradient(
+				180deg,
+				hsl( var(--color-purple), 50%, 0.45),
+				hsl( var(--color-purple), 50%, 0.15)
+			);
+		}
 	}
 }
 

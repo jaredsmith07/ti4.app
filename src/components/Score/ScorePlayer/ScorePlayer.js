@@ -5,7 +5,7 @@ const ScorePlayer = (props) => {
     let index = props.index
 
     return (
-        <div className={`card player__card player--${ props.color }`}>
+        <div className={`player__card player--${ props.color }`}>
             <div className="player__image"></div>
             <div className="player__info">
                 <h2>{ props.name }</h2>

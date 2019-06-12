@@ -360,34 +360,40 @@ class App extends Component {
                     <div className="view view__players">
                         {/* <ScoreContainer /> */}
                         <h1>Setup</h1>
-                        <PlayerContainer
-                            players={this.state.players}
-                            races={this.state.races}
-                            pickedRace={this.handlePickedRace}
-                            colors={this.state.colors}
-                            pickedColor={this.handlePickedColor}
-                            changeScore={this.handleScoreChange}
-                            addPlayer={this.handleAddPlayer}
-                            removePlayer={this.handleRemovePlayer} 
-                            handleModal={this.handleShowModal}
-                        />
+                        <div className="players">
+                            <PlayerContainer
+                                players={this.state.players}
+                                races={this.state.races}
+                                pickedRace={this.handlePickedRace}
+                                colors={this.state.colors}
+                                pickedColor={this.handlePickedColor}
+                                changeScore={this.handleScoreChange}
+                                addPlayer={this.handleAddPlayer}
+                                removePlayer={this.handleRemovePlayer} 
+                                handleModal={this.handleShowModal}
+                            />
+                        </div>
                     </div>
 
                     <div className="view view__score">
                         <h1>Score</h1>
+                        <div class="score">
                         <ScoreContainer
                             players={this.state.players}
                             changeScore={this.handleScoreChange}
                         />
+                        </div>
                     </div>
 
                     <div className="view view__game">
                         <h1>Round</h1>
-                        <RoundContainer
-                            players={this.state.players}
-                            strategies={this.state.strategies}
-                            pickStrat={this.handleStratPick}
-                        />
+                        <div className="round">
+                            <RoundContainer
+                                players={this.state.players}
+                                strategies={this.state.strategies}
+                                pickStrat={this.handleStratPick}
+                            />
+                        </div>
                     </div>
 
                     <div className="view view__agenda">

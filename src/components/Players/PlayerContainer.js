@@ -6,7 +6,7 @@ class PlayerContainer extends Component {
 
 	render() {
 		return ( 
-            <div className="players">
+            <div className="players__container">
                 <div className="players__list flex-row">
                     {this.props.players.map( (player, index) => (
                         <Player
